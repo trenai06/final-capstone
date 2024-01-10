@@ -1,0 +1,60 @@
+/*
+    1. General Brainstorming
+    - Music Festival Website - I want to find positions in front end development/UX/UI
+    - Next Level CSS
+    - 
+
+    2. Problem Based Brainstorming 
+    - Define the Problem
+    - Reverse the Problem 
+    - Collect Ideas 
+    - Reverse the Ideas
+    - Identify Solutions
+
+    3. Features it will have
+    - Home page will be set up like a dj deck and most of the buttons will be interactive 
+    - 
+
+    4. What you will need for those features 
+
+    5. Proposed Architecture 
+    - Postgres
+
+        . Schedule table (5 stages)
+            - Headers ( ID Day artist stage time)
+
+        . Artists table 
+            - Headers (ID artist audio video spotify Bio)
+
+    - Vue
+        . Components
+            1. Navbar
+        . Views
+            1. Home Page
+            2. Artist Page
+            3. Schedule Page
+                - By day
+                - By stage
+            4. Theme Explanation
+            5. Sponsors Page
+
+    Twilio? do some research
+    - Queries
+
+    - JS functions
+    
+    
+
+
+    - Features/ Storytelling
+        .  Stories and Chores
+        . think about the flow of the pages. 
+        . tile: This title should be short, descriptive, and include the specific user/persona
+        . Business case: Who want the functionality, why and to what end
+        . Acceptance criteria: This defines what you will walk through to make sure that the story is completed.
+
+    - The purpose of the story is the why. If you don't have a reason for doing something, then why are you doing it. Having a story helps you to break things down into smaller bits. takes you into the journey of what is going to happen. 
+
+
+    Features, personas, stories, notes, questions, complexity, Status 
+*/

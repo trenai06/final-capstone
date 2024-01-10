@@ -1,0 +1,256 @@
+*{
+    margin:0;
+    padding:0; 
+}
+.main-container {
+    height: 100vh; 
+    display: flex;
+    flex-direction: column;
+  }
+
+.navbar {
+    border: solid 2px black;
+    height: 150px;
+    display: flex;
+    justify-content: center;
+    justify-content: space-evenly;
+  }
+  
+  .menu {
+    border: solid 2px black;
+    height: 100px;
+    width: 100px;
+    border-radius: 30px;
+    margin-top: 10px;
+    animation-name: light;
+    animation-duration: 1s;
+  }
+  
+  .left {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+  }
+  
+  .left-dropdown {
+    display: none;
+    position: absolute;
+    top: 160px;
+    left: 5px;
+    flex-direction: column;
+    z-index: 1;
+    cursor: pointer;
+  }
+  
+  .left-dropdown div {
+    display: block;
+    border: solid 2px black;
+    height: 100px;
+    width: 200px;
+    background-color: black;
+    color: darkgray;
+    font-size: 30px;
+    text-align: center;
+  }
+  
+  .left:hover .left-dropdown {
+    display: block;
+  }
+  
+  .left,
+  .right {
+    background-color: rgb(131, 14, 76);
+  }
+  
+  .left:hover,
+  .right:hover {
+    background-color: rgb(241, 24, 183);
+  }
+  
+  @keyframes light {
+    from {
+      background-color: rgb(131, 14, 76);
+    }
+    to {
+      background-color: rgb(241, 24, 183);
+    }
+  }
+  
+  .knob {
+    border: solid 2px black;
+    height: 75px;
+    width: 75px;
+    border-radius: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+    background-color: black;
+  }
+  
+  .knob-center {
+    border: solid 2px black;
+    height: 60px;
+    width: 60px;
+    border-radius: 50px;
+    display: flex;
+    font-size: 40px;
+    background-color: lightgray;
+  }
+  
+  .knob-label {
+    position: relative;
+    left: 20px;
+    bottom: -17px;
+  }
+  
+  /* Check the color. black border and gray/white screen. gray border with black screen. ?????*/
+  .screen {
+    border: solid 2px black;
+    width: 1000px;
+    height: 120px;
+    border-radius: 50px;
+    align-self: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: darkgray;
+  }
+  
+  .screen-border {
+    border: solid 2px black;
+    height: 100px;
+    width: 980px;
+    border-radius: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: "Pixelify Sans", sans-serif;
+    color: greenyellow;
+    background-color: darkgray;
+  }
+/* .main-container{
+    height:850px; 
+    width:100vw;
+    display:flex; 
+    flex-direction:column; 
+    justify-content:center; 
+    align-items: center;
+} */
+
+/* .band-container{
+    display:flex;
+    /* justify-content:center;  */
+
+
+/* .band-left{
+border:solid 2px;
+height:100px; 
+width:500px;
+border-bottom: 0px;
+
+}
+
+.band-cushion-left{
+    border:solid 2px;
+    height:100px; 
+    width:300px;
+}
+
+.band-right{
+    border:solid 2px;
+    height:100px; 
+    width:100px;
+    border-bottom:0px;
+} */
+
+/* .band{
+    border:solid 5px black; 
+    border-radius: 900px 900px 10px 10px; 
+    border-bottom: 0px; 
+    width: 1200px; 
+    height: 450px; 
+    display: flex; 
+    flex-direction: column; 
+    justify-content:center; 
+    align-items: center; 
+} */
+
+/* .inner-band{
+    border:solid 5px black; 
+    border-radius: 500px 500px 10px 10px; 
+    width: 750px; 
+    height: 410px; 
+    border-bottom: 0px; 
+} */
+
+.ear-container{
+    display:flex; 
+    justify-content:center;
+   align-items: center;
+}
+
+.handle-left{
+    border:solid 2px;
+    width:90px;
+    height:500px;
+    border-radius: 50px 0px 50px 50px;
+    display:flex;
+    position: relative;
+    top:160px;
+}
+
+.ears-left{
+    position:relative;
+    border: solid 2px black; 
+    height: 300px; 
+    width: 200px; 
+    border-radius: 70px 10px 10px 70px; 
+}
+
+.ear-cushion-left{ 
+    position: relative; 
+    border: solid black 2px; 
+    height: 300px; 
+    width: 50px; 
+    border-left:0px; 
+    border-radius: 10px 10px 10px 10px;
+}
+
+.ears-right{ 
+    position: relative; 
+    border: solid 2px black; 
+    height: 300px; 
+    width:200px; 
+    border-radius: 10px 70px 70px 10px; 
+}
+
+.ear-cushion-right{
+    position: relative;
+    border: solid black 2px; 
+    height: 300px; 
+    width: 50px; 
+    border-right: 0px; 
+    border-radius: 10px 10px 10px 10px; 
+}
+
+.handle-right{
+    border:solid 2px black;
+    height: 500px; 
+    width:90px;
+    border-radius: 0px 50px 50px 50px;
+    display:flex;
+    position: relative;
+    top:160px;
+}
+
+.container{
+    height: 600px;
+    width: 1000px;
+    border:solid 2px;
+    display: flex;
+    flex-direction: column;
+    
+   
+}
