@@ -24,7 +24,7 @@
             - Headers ( ID Day artist stage time)
 
         . Artists table 
-            - Headers (ID artist audio video spotify Bio)
+            - Headers (ID artist image audio video spotify Bio)
 
     - Vue
         . Components
@@ -58,3 +58,15 @@
 
     Features, personas, stories, notes, questions, complexity, Status 
 */
+
+What I need to do.
+- add Vue to my project 
+- redo structure in vue 
+- finish uploading to tables in postgres
+- finish finish css
+    . homepage
+    . artist page
+    . schedule page
+    . general info 
+    . sponsorships
+- 
