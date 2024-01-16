@@ -36,7 +36,7 @@
   .left-dropdown {
     display: none;
     position: absolute;
-    top: 160px;
+    top: 103px;
     left: 5px;
     flex-direction: column;
     z-index: 1;

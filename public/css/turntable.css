@@ -42,7 +42,7 @@ body{
 .left-dropdown {
   display: none;
   position: absolute;
-  top: 160px;
+  top: 153px;
   left: 5px;
   flex-direction: column;
   z-index: 1;
