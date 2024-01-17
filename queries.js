@@ -36,10 +36,52 @@ const getVideo = (req, res) => {
     })
 }
 
+const getSchedule = (req, res) => {
+ pool.query('SELECT * FROM schedule', (error, results) => {
+    if(error){
+        throw error
+    }
+    res.status(200).json(results.rows)
+ })
+}
+
+const getScheduleByDay = (req, res) => {
+    const day = req.params.day
+    pool.query('SELECT * FROM schedule WHERE day = $1', [day], (error, results) => {
+        if(error){
+            throw error
+        }
+        res.status(200).json(results.rows)
+    })
+}
+
+const getScheduleByStage = (req, res) => {
+    const stage = req.params.stage 
+    pool.query('SELECT * FROM schedule WHERE stage = $1', [stage], (error, results) => {
+        if(error){
+            throw error
+        }
+        res.status(200).json(results.rows)
+    })
+}
+
+const getScheduleByType = (req, res) => {
+    const type = req.params.type
+    pool.query('SELECT * FROM schedule WHERE type = $1', [type], (error, results) => {
+        if(error){
+            throw error
+        }
+        res.status(200).json(results.rows)
+    })
+}
 
 
 module.exports = {
     getArtists, 
     getArtistById,
     getVideo,
+    getSchedule,
+    getScheduleByDay,
+    getScheduleByStage,
+    getScheduleByType
 }

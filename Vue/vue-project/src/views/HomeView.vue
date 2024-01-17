@@ -1,0 +1,507 @@
+<script setup>
+
+import { ref } from "vue";
+import Header from "../components/Header.vue";
+
+function videoPlayer(id){
+    fetch(`http://localhost:3000/video/${id}`)
+    .then((response) => {
+        console.log(id)
+       let info = response.json()
+       console.log(info)
+       return info
+    })
+    .then((info) => {
+        const videoPlayer = document.getElementById("dials")
+        videoPlayer.innerHTML = ""
+        const video = info.video
+       const Player = document.createElement("iframe")
+      
+       Player.style.width = "700px";
+       videoPlayer.appendChild(Player)
+       Player.src = video
+    })
+    .catch((error) => {
+        console.log(error)
+    })
+}
+</script>
+
+<template>
+ <div class="main-container"> 
+  <Header></Header>
+  <div class="middle-container"> 
+    <div class="deck">
+        <div class="disk">
+            <div class="sowork">
+                <span class="letter" id="s">S</span>
+                <span class="letter" id="o">o</span>
+                <span class="letter" id="w">W</span>
+                <span class="letter" id="O">o</span>
+                <span class="letter" id="r">R</span>
+                <span class="letter" id="k">K</span>
+                <span class="letter" id="l">!</span>
+            </div>
+            <div class="outer"> 
+            
+            <div class="center"></div>
+            </div>
+        </div>
+    </div>
+    <div class="board">
+        <div class="dials" id="dials">
+            
+        </div>
+    <div class="artists">
+       <button class="one a" @click="videoPlayer(1)"> </button>
+       <button class="two b" @click="videoPlayer(2)"></button>
+       <button class="three c" @click="videoPlayer(3)"></button>
+       <button class="four d" onclick="videoPlayer(4)"></button>
+       <button class="five e" onclick="videoPlayer(5)"></button>
+       <button class="six f" onclick="videoPlayer(6)"></button>
+       <button class="seven b" onclick="videoPlayer(7)"></button>
+       <button class="eight e" onclick="videoPlayer(8)"></button>
+       <button class="nine c" onclick="videoPlayer(9)"></button>
+       <button class="ten a" onclick="videoPlayer(10)"></button>
+       <button class="eleven d" onclick="videoPlayer(11)"></button>
+       <button class="twelve f" onclick="videoPlayer(12)"></button>
+    </div>
+    </div>
+    <div class="deck">
+        <div class="disk">
+            <div class="sowork">
+                <span class="letter" id="s">S</span>
+                <span class="letter" id="o">o</span>
+                <span class="letter" id="w">W</span>
+                <span class="letter" id="O">o</span>
+                <span class="letter" id="r">R</span>
+                <span class="letter" id="k">K</span>
+                <span class="letter" id="l">!</span>
+            </div>
+            <div class="outer">
+            <div class="center"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+</div>
+
+    <!-- </div> -->
+</template>
+
+<style scoped>
+* {
+  margin: 0;
+  padding: 0;
+}
+.main-container {
+  height: 100vh; 
+  display: flex;
+  flex-direction: column;
+  border: solid 2px black;
+}
+
+/* .navbar {
+  border: solid 2px black;
+  height: 250px;
+  display: flex;
+  justify-content: center;
+  justify-content: space-evenly;
+}
+
+.menu {
+  border: solid 2px black;
+  height: 150px;
+  width: 150px;
+  border-radius: 30px;
+  margin-top: 10px;
+  animation-name: light;
+  animation-duration: 1s;
+}
+
+.left {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+.left-dropdown {
+  display: none;
+  position: absolute;
+  top: 153px;
+  left: 5px;
+  flex-direction: column;
+  z-index: 1;
+  cursor: pointer;
+}
+
+.left-dropdown div {
+  display: block;
+  border: solid 2px black;
+  height: 100px;
+  width: 200px;
+  background-color: black;
+  color: darkgray;
+  font-size: 30px;
+  text-align: center;
+}
+
+.left:hover .left-dropdown {
+  display: block;
+}
+
+.left,
+.right {
+  background-color: rgb(131, 14, 76);
+}
+
+.left:hover,
+.right:hover {
+  background-color: rgb(241, 24, 183);
+}
+
+@keyframes light {
+  from {
+    background-color: rgb(131, 14, 76);
+  }
+  to {
+    background-color: rgb(241, 24, 183);
+  }
+}
+
+.knob {
+  border: solid 2px black;
+  height: 75px;
+  width: 75px;
+  border-radius: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 125px;
+  background-color: black;
+}
+
+.knob-center {
+  border: solid 2px black;
+  height: 60px;
+  width: 60px;
+  border-radius: 50px;
+  display: flex;
+  font-size: 40px;
+  background-color: lightgray;
+}
+
+.knob-label {
+  position: relative;
+  left: 20px;
+  bottom: -17px;
+}
+
+/* Check the color. black border and gray/white screen. gray border with black screen. ?????*/
+/* .screen {
+  border: solid 2px black;
+  width: 1000px;
+  height: 150px;
+  border-radius: 50px;
+  align-self: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: darkgray;
+}
+
+.screen-border {
+  border: solid 2px black;
+  height: 130px;
+  width: 980px;
+  border-radius: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Pixelify Sans", sans-serif;
+  color: greenyellow;
+  background-color: darkgray;
+} */ 
+
+.middle-container {
+  display: flex;
+  flex-direction: row;
+  border: solid 2px black;
+  height: 741px;
+}
+
+.deck {
+  border: solid 2px black;
+  display: flex;
+  flex-grow: 1.5;
+  justify-content: center;
+  align-items: center;
+}
+
+.board {
+  display: flex;
+  flex-direction: column;
+  /* align-items: end; */
+  justify-content: end;
+  height: 741px;
+  flex-basis: 1000px;
+  
+}
+
+.dials {
+  border: solid 2px black;
+  height: 250px;
+  display:flex; 
+  align-content: center;
+  justify-content: center;
+  
+}
+
+.artists {
+  border: solid 2px black;
+  display: flex;
+  padding-top: 15px;
+  flex-wrap: wrap;
+  height: 550px;
+  justify-content: space-evenly;
+}
+
+/* Look at the colorscheme, overall and of the buttons */
+
+.a {
+  background-color: darkblue;
+}
+
+.a:hover {
+  background-color: rgb(39, 157, 248);
+}
+
+.b {
+  background-color: green;
+}
+
+.b:hover {
+  background-color: greenyellow;
+}
+
+.c {
+  background-color: goldenrod;
+}
+.c:hover {
+  background-color: yellow;
+}
+
+.d {
+  background-color: darkred;
+}
+
+.d:hover {
+  background-color: red;
+}
+
+.e {
+  background-color: rgb(131, 14, 76);
+}
+
+.e:hover {
+  background-color: rgb(241, 24, 183);
+}
+
+.f {
+  background-color: goldenrod;
+}
+
+.f:hover {
+  background-color: yellow;
+}
+
+.one {
+font-size: 0;
+}
+
+.one:hover{
+  font-size: 50px; 
+}
+
+button {
+  height: 150px;
+  width: 200px;
+}
+ 
+
+
+.panel {
+  border: solid 2px black;
+  width: 200px;
+  height: 500px;
+}
+
+.slide {
+  width: 100%;
+}
+
+.slider {
+  appearance: none;
+  width: 100%;
+  height: 25px;
+  background-color: grey;
+  outline: none;
+  opacity: 0.7;
+  -webkit-transition: 0.2s;
+  transition: opacity 0.2s;
+}
+
+.slider:hover {
+  opacity: 1;
+}
+
+.slider::-webkit-slider-thumb {
+  appearance: none;
+  width: 25px;
+  height: 25px;
+  background: green;
+  cursor: pointer;
+}
+
+input {
+  writing-mode: vertical-lr;
+}
+
+/* ::-webkit-scrollbar{
+    width: 12px; 
+    height: 12px; 
+}
+
+::-webkit-scrollbar-track{
+    box-shadow:inset 0 0 10px olivedrab;
+    border-radius: 10px; 
+}
+
+::-webkit-scrollbar-thumb{
+    border-radius: 10px; 
+    background: yellowgreen; 
+    box-shadow: inset 0 0 6px rgba(0,0,0,0.5);
+}
+
+::-webkit-scrollbar-thumb:hover{
+    background: #7bac10; 
+} */
+
+.disk {
+  border: 2px solid black;
+  height: 400px;
+  width: 400px;
+  border-radius: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transition:transform 10s;
+}
+.disk:hover{
+  transform:rotate(1080deg);
+}
+.sowork{
+  display:flex;
+  column-gap: 5px;
+ position: relative;
+ top:-30px;
+
+}
+
+.center {
+  height: 60px;
+  width: 60px;
+  border-radius: 50%;
+  border: solid 2px black;
+}
+
+.letter{
+  display: flex;
+  /* border: solid 2px black;
+  border-radius: 10px; */
+  width: 30px;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 30px;
+}
+
+/* .letter {
+   transform-origin: bottom center;
+ 
+  border:solid 2px;
+   position: absolute;
+  bottom:175px;
+  left:205px;
+  display: inline-block;
+  padding-bottom: 150px;  
+}
+
+.letter-right{
+  transform-origin: bottom center;
+ 
+  border:solid 2px;
+   position: absolute;
+  bottom:175px;
+  right:200px;
+  display: inline-block;
+  padding-bottom: 150px;  
+} 
+
+#s{
+  transform: rotate(-19deg);
+  padding-bottom:125px;
+}
+
+#o{
+  transform: rotate(-14deg) ;
+  padding-bottom: 129px;
+}
+
+#w{
+  transform: rotate(-9deg) ;
+  padding-bottom: 131px;
+}
+
+#O{
+  transform: rotate(-2deg);
+  padding-bottom: 132px;
+}
+
+#r{
+  transform: rotate(4deg) ;
+  padding-bottom: 131px;
+}
+
+#k{
+  transform: rotate(10deg) ;
+  padding-bottom: 128px;
+
+}
+
+#l{
+  transform: rotate(16deg);
+  padding-bottom: 125px;
+} */
+.outer{
+  height: 150px;
+  width: 150px;
+  border-radius: 50%;
+  border: solid 2px black;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+
+
+
+
+</style>

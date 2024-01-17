@@ -83,6 +83,7 @@ function videoPlayer(id){
     .then((info) => {
       
         const videoPlayer = document.getElementById("dials")
+        videoPlayer.removeChild(videoPlayer.firstChild)
         const video = info.video
        const Player = document.createElement("iframe")
        videoPlayer.appendChild(Player)
