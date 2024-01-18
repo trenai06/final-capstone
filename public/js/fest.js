@@ -23,6 +23,7 @@ function enableTooltips(tooltipindex){
         if(index != tooltipindex){
             tooltip.classList.add('enabled')
             tooltip.classList.remove('disabled')
+           
         }
     })
 }
@@ -68,6 +69,7 @@ tooltips.forEach((tooltip, index) =>{
             isTooltip = false
             tooltip.classList.remove('active')
             enableTooltips(index)
+            
         } ,100)
 })
 })
@@ -95,3 +97,50 @@ function videoPlayer(id){
         console.log(error)
     })
 }
+
+
+function artistCards(id){
+    
+    fetch(`/artists/${id}`)
+    .then((response) => {
+        info = response.json()
+        
+        return info
+    })
+
+    .then((info) => {
+        console.log(info)
+        
+         cardContainer = document.getElementById(`tooltip-content-${id}`)
+         cardContainer.innerHTML = ""
+         let card = document.createElement("div")
+        cardimage = document.createElement("img")
+        cardimage.src = info.image
+        paragraph = document.createElement("p")
+        paragraph.innerText = info.bio
+        link = document.createElement("a")
+        label = document.createElement("h1")
+        label.innerText = `Take a Look!!`
+        link.href = info.spotify
+        card.classList.add("content")
+
+        link.appendChild(label)
+        card.appendChild(cardimage)
+        card.appendChild(paragraph)
+        card.appendChild(link)
+        cardContainer.appendChild(card)
+        
+
+
+    })
+
+    .catch((error) => {
+        console.log(error)
+    })
+}
+
+function change(){
+    document.getElementById("title").click()
+}
+
+// console.log(artistCards(2))

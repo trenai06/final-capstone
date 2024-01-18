@@ -1,4 +1,5 @@
 <script setup>
+import { RouterLink } from "vue-router";
 
 </script>
 
@@ -6,45 +7,50 @@
 <div class="navbar">
         <div class="menu left">
             <div class="left-dropdown">
-                <div>Home</div>
-                <div>General Info</div>
-               <div>Artists</div>
-                <div>Schedule</div>
-                <div>Theme</div>
-                <div>Sponsors</div>
+                <div><RouterLink to="/">Home</RouterLink></div>
+                <div><RouterLink to="/general">General Info</RouterLink></div>
+               <div><RouterLink to="/artist">Artists</RouterLink></div>
+                <div><RouterLink to="/schedule">Schedule</RouterLink></div>
+                <!-- <div>Theme</div> if time to do something creative -->
+                <div><RouterLink to="/sponsors">Sponsors</RouterLink></div>
 
             </div>
         </div>
+        <div class="knob-outer">
         <div class="knob">
-            <!-- <h3 class="knob-label">/</h3> -->
             <div class="knob-center">
                 <h3 class="knob-label">/</h3>
             </div>
         </div>
+      </div>
         <div class="screen">
             <div class="screen-border"> <h1> SoWork Music Festival </h1></div>
         </div> 
+        <div class="knob-outer">
         <div class="knob">
             <div class="knob-center">
                 <h3 class="knob-label">/</h3>
             </div>
         </div>
+      </div>
         <div class="menu right"></div>
 
     </div>
 </template>
 
 <style scoped>
+@import url('https://fonts.googleapis.com/css2?family=Pixelify+Sans&display=swap');
+
+
 .navbar {
-  border: solid 2px black;
+  border: solid 2px darkgray;
   height: 200px;
   display: flex;
   justify-content: center;
-  justify-content: space-evenly;
-}
+    justify-content: space-evenly;}
 
 .menu {
-  border: solid 2px black;
+  border: solid 10px black;
   height: 100px;
   width: 100px;
   border-radius: 30px;
@@ -104,20 +110,30 @@
   }
 }
 
+.knob-outer{
+  background-color: black;
+  border-radius: 50px;
+  height:90px;
+  width:90px;
+  display: flex;
+  margin-top: 80px;
+  justify-content: center;
+  align-items: center;
+}
 .knob {
-  border: solid 2px black;
+  border: solid 2px lightgray;
   height: 75px;
   width: 75px;
   border-radius: 50px;
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 68px;
-  background-color: black;
+  /* margin-top: 68px; */
+  background-color: gray;
 }
 
 .knob-center {
-  border: solid 2px black;
+  border: solid 2px gray;
   height: 60px;
   width: 60px;
   border-radius: 50px;
@@ -134,7 +150,7 @@
 
 /* Check the color. black border and gray/white screen. gray border with black screen. ?????*/
 .screen {
-  border: solid 2px black;
+  border: solid 2px gray;
   width: 1000px;
   height: 150px;
   border-radius: 50px;
@@ -142,7 +158,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: darkgray;
+  background-color: black;
 }
 
 .screen-border {
@@ -153,12 +169,12 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  font-family: "Pixelify Sans", sans-serif;
-  color: greenyellow;
-  background-color: darkgray;
+  font-family: 'Pixelify Sans', sans-serif;
+  color: rgb(172, 255, 47);
+  background-color: gray;
+  font-size: 35px;
+  -webkit-text-stroke-color: black;
+  -webkit-text-stroke-width: 1px;
 }
-
-
-
 
 </style>
