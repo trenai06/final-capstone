@@ -118,6 +118,10 @@ function no(){
 </script>
 
 <template>
+
+
+
+  <!-- <div class="computer-container"> -->
     <div class="main-container">
         <Header></Header>
         
@@ -140,6 +144,7 @@ function no(){
               </div>
            </div>
          </div>  
+</div>         
         <div class="buttons">
            <button @click="artistCards(1)"></button>
            <button @click="artistCards(2)"></button>
@@ -173,17 +178,22 @@ function no(){
 
     </div>
    
-    </div>
+    <!-- </div> -->
+
 <!-- maybe try a computer screen situation. the theme is about the intersectionality of tech and music -->
 
 </template>
 
 <style scoped>
 
+.computer-container{
+  border:solid 2px;
+}
 .main-container {
     height: 100vh; 
     display: flex;
     flex-direction: column;
+    border:solid 2px;
   }
 .artist-container{
 display:flex;
@@ -220,6 +230,9 @@ row-gap: 50px;
     transition:.4s;
     
   }
+  .face1{
+    overflow:hidden;
+  }
   
   .container .card .face.face1{
     position: relative;
@@ -243,6 +256,7 @@ row-gap: 50px;
       0 0 50px #fff,
       -10px 0 80px #f0f,
       10px 0 80px #0ff;
+      overflow:visible;
      
   }
   
@@ -342,7 +356,7 @@ row-gap: 50px;
  
 
   button{
-    height: 100px; 
+    height: 75px; 
     width:100px;
     border-radius: 10px;
   }

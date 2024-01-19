@@ -2,8 +2,10 @@
     margin:0;
     padding:0; 
 }
-.main-container {
+
+ .main-container {
     height: 100vh; 
+    width:100vw;
     display: flex;
     flex-direction: column;
   }
@@ -103,10 +105,34 @@
     position: relative;
     left: 20px;
     bottom: -17px;
+  } 
+  .screen {
+    border: solid 2px black;
+    width: 1000px;
+    height: 120px;
+    border-radius: 50px;
+    align-self: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: darkgray;
+  }
+  
+  .screen-border {
+    border: solid 2px black;
+    height: 100px;
+    width: 980px;
+    border-radius: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: "Pixelify Sans", sans-serif;
+    color: greenyellow;
+    background-color: darkgray;
   }
   
   /* Check the color. black border and gray/white screen. gray border with black screen. ?????*/
-  .screen {
+  /* .screen {
     border: solid 2px black;
     width: 1000px;
     height: 120px;
@@ -133,8 +159,8 @@
 
 .artist-container{
 display:flex;
-/* width: 100vw;
-height:100vh; */
+width: 100vw;
+height:100vh;
 flex-direction: column;
 align-items: center;
 justify-content: center;
@@ -147,17 +173,17 @@ row-gap: 50px;
 }
 
   .container{
-    /* width: 100vw; */
-    position: relative;
+    width: 100vw;
+    position: relative; */
     
    
     /* flex-wrap:wrap; */
     /* justify-content: center;
     align-items: center; */
     
-  }
+  /* } */
   
-  .container .card{
+  /* .container .card{
     position: relative;
   }
   
@@ -343,4 +369,4 @@ row-gap: 50px;
 
 .headphone-left, .headphone-right{
   display: flex;
-}
+} */
