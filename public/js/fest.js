@@ -1,78 +1,3 @@
-/* onclick to each button to pull up embedded video - do i need to make separate onclick functions. */
-const tooltips = document.querySelectorAll('.all-tooltips .tooltip')
-const container = document.querySelector('.container')
-let timeoutId
-let isTooltip = false
-
-
-function contentPosition(){
-    tooltips.forEach(tooltip => {
-        const entry = tooltip.querySelector('.title')
-        const content = document.getElementById('tooltip-content')
-        content.style.left = entry.offsetLeft  + 'px'
-    })
-}
-
-
-
-contentPosition()
-
-
-function enableTooltips(tooltipindex){
-    tooltips.forEach((tooltip, index) => {
-        if(index != tooltipindex){
-            tooltip.classList.add('enabled')
-            tooltip.classList.remove('disabled')
-           
-        }
-    })
-}
-
-function disableTooltips(tooltipindex){
-    tooltips.forEach((tooltip, index) => {
-        if(index != tooltipindex){
-            tooltip.classList.add('disabled')
-        tooltip.classList.remove('enabled')
-        }
-    }) 
-}
-
-
-tooltips.forEach((tooltip, index) =>{
-    const entry = tooltip.querySelector('.title')
-    const content = tooltip.querySelector('.tooltip-content')
-    entry.addEventListener('mousemove', () => {
-        if(isTooltip === false){
-            tooltip.classList.add('active')
-            isTooltip = true
-            disableTooltips(index)
-        } 
-    })
-    entry.addEventListener('mouseleave', () => {
-        enableTooltips(index)
-        timeoutId = setTimeout(() => {
-            isTooltip = false
-            tooltip.classList.remove('active')
-            
-        } ,100)
-    })
-    content.addEventListener('mousemove', () => {
-        if(isTooltip === false){
-            isTooltip = true
-        clearTimeout(timeoutId)
-        tooltip.classList.add('active');
-        disableTooltips(index)
-        }
-    })
-    content.addEventListener('mouseleave', () => {
-        timeoutId = setTimeout(() => {
-            isTooltip = false
-            tooltip.classList.remove('active')
-            enableTooltips(index)
-            
-        } ,100)
-})
-})
 
 function videoPlayer(id){
     fetch(`/video/${id}`)
@@ -110,28 +35,17 @@ function artistCards(id){
 
     .then((info) => {
         console.log(info)
-        
-         cardContainer = document.getElementById(`tooltip-content-${id}`)
-         cardContainer.innerHTML = ""
-         let card = document.createElement("div")
-        cardimage = document.createElement("img")
-        cardimage.src = info.image
-        paragraph = document.createElement("p")
-        paragraph.innerText = info.bio
-        link = document.createElement("a")
-        label = document.createElement("h1")
-        label.innerText = `Take a Look!!`
-        link.href = info.spotify
-        card.classList.add("content")
 
-        link.appendChild(label)
-        card.appendChild(cardimage)
-        card.appendChild(paragraph)
-        card.appendChild(link)
-        cardContainer.appendChild(card)
-        
-
-
+         cardContainer = document.getElementById("content")
+            cardParagraph = document.getElementById("paragraph")
+            cardLink = document.getElementById("link")
+            cardImage = document.getElementById("image")
+            cardArtist = document.getElementById("name")
+        cardParagraph.innerHTML = info.bio
+        cardLink.href = info.spotify      
+        cardImage.src = info.image
+        cardArtist.innerHTML = info.artist
+        cardLink.innerHTML = `Take a Look`
     })
 
     .catch((error) => {
@@ -139,8 +53,11 @@ function artistCards(id){
     })
 }
 
-function change(){
-    document.getElementById("title").click()
+
+
+function no(){
+    document.getElementById("name").innerHTML = ""
+    document.getElementById("image").src = "https://static.vecteezy.com/system/resources/previews/001/826/199/original/progress-loading-bar-buffering-download-upload-and-loading-icon-vector.jpg"
+    document.getElementById("paragraph").innerHTML=""
 }
 
-// console.log(artistCards(2))

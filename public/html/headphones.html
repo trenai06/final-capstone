@@ -8,333 +8,93 @@
 </head>
 <body>
     <div class="main-container">
-    <div class="navbar">
-        <div class="menu left">
-            <div class="left-dropdown">
-                <div onclick="goHome()">Home</div>
-                <div>General Info</div>
-                <div>Artists</div>
-                <div>Schedule</div>
-                <div>Theme</div>
-                <div>Sponsors</div>
+        <div class="navbar">
+            <div class="menu left">
+                <div class="left-dropdown">
+                    <div onclick="goHome()">Home</div>
+                    <div>General Info</div>
+                    <div>Artists</div>
+                    <div>Schedule</div>
+                    <div>Theme</div>
+                    <div>Sponsors</div>
+                </div>
             </div>
-        </div>
-        <div class="knob">
-            <div class="knob-center">
-                <h3 class="knob-label">/</h3>
+            <div class="knob">
+                <div class="knob-center">
+                    <h3 class="knob-label">/</h3>
+                </div>
             </div>
-        </div>
-        <div class="screen">
-            <div class="screen-border"> <h1> SoWork Music Festival </h1></div>
+            <div class="screen">
+                <div class="screen-border"> <h1> SoWork Music Festival </h1></div>
+            </div> 
+            <div class="knob">
+                <div class="knob-center">
+                    <h3 class="knob-label">/</h3>
+                </div>
+            </div>
+            <div class="menu right"></div>
+
         </div> 
-        <div class="knob">
-            <div class="knob-center">
-                <h3 class="knob-label">/</h3>
-            </div>
-        </div>
-        <div class="menu right"></div>
-
-    </div> 
-
-    <div class="ear-container">
+        <div class="headphones">
+           <div class="headphone-left">
         <div class="handle-left"></div>
         <div class="ears-left"></div>
         <div class="ear-cushion-left"></div>
+           </div>
+    <div class="artist-container">  
+
         <div class="container">
-        <div class="all-tooltips">
-            <div class="divone cell" id="cell">
-                <div id="tooltip" class="tooltip tooltip-1"> 
-                    <h1 id="title" class="title" onclick="artistCards(1)">Childish Gambino</h1>
-                    <div class="tooltip-content" id="tooltip-content-1">
-                        <!-- <div  class="content" id="content"> -->
-                            <!-- <img src="https://www.billboard.com/wp-content/uploads/media/childish-gambino-press-2013-650.jpg?w=650" alt="childish">
-                            <p id="bio">Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa, architecto accusamus. Amet, perferendis reprehenderit commodi eligendi natus atque mollitia. Illo!</p>
-                            <a href="https://open.spotify.com/playlist/37i9dQZF1DZ06evO4aKvZe"> <h1>Take A Listen!</h1> </a> -->
-                        <!-- </div> -->
-                    </div>
+            <div class="card" id="card" onmouseleave="no()">
+              <div class="face face1">
+                <div class="content" id="content" >
+                   <i class="fab fa-windows"></i>            
+                  <h3 id="name">Want to see more?</h3>
+                  <img id="image" >
                 </div>
-            </div>
-             <div class="divtwo cell">
-                <div class="tooltip tooltip-2"> 
-                    <h1 id="title" class="title" onclick="artistCards(2)">1</h1>
-                    <div class="tooltip-content" id="tooltip-content-2">
-                        <!-- <div class="content" id="content"> -->
-                            <!-- <img src="https://www.billboard.com/wp-content/uploads/media/childish-gambino-press-2013-650.jpg?w=650" alt="childish">
-                            <p id="bio">Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa, architecto accusamus. Amet, perferendis reprehenderit commodi eligendi natus atque mollitia. Illo!</p>
-                            <a href="https://open.spotify.com/playlist/37i9dQZF1DZ06evO4aKvZe"> <h1>Take A Listen!</h1> </a> -->
-                        <!-- </div> -->
-                    </div>
+              </div>
+              <div class="face face2">
+                <div class="content" id="content">
+                  <p id="paragraph"> </p>
+                  <a id="link" type="button">Choose an Artist</a>
                 </div>
-            </div>
-            <!-- <div class="divthree cell">
-                <div class="tooltip tooltip-1"> 
-                    <h1 id="title" class="title">1</h1>
-                    <div class="tooltip-content" id="tooltip-content">
-                        <div class="content">
-                            <img src="https://www.billboard.com/wp-content/uploads/media/childish-gambino-press-2013-650.jpg?w=650" alt="childish">
-                            <p id="bio">Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa, architecto accusamus. Amet, perferendis reprehenderit commodi eligendi natus atque mollitia. Illo!</p>
-                            <a href="https://open.spotify.com/playlist/37i9dQZF1DZ06evO4aKvZe"> <h1>Take A Listen!</h1> </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="divfour cell">
-                <div class="tooltip tooltip-1"> 
-                    <h1 id="title" class="title">1</h1>
-                    <div class="tooltip-content" id="tooltip-content">
-                        <div class="content">
-                            <img src="https://www.billboard.com/wp-content/uploads/media/childish-gambino-press-2013-650.jpg?w=650" alt="childish">
-                            <p id="bio">Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa, architecto accusamus. Amet, perferendis reprehenderit commodi eligendi natus atque mollitia. Illo!</p>
-                            <a href="https://open.spotify.com/playlist/37i9dQZF1DZ06evO4aKvZe"> <h1>Take A Listen!</h1> </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="divfive cell">
-                <div class="tooltip tooltip-1"> 
-                    <h1 id="title" class="title">1</h1>
-                    <div class="tooltip-content" id="tooltip-content">
-                        <div class="content">
-                            <img src="https://www.billboard.com/wp-content/uploads/media/childish-gambino-press-2013-650.jpg?w=650" alt="childish">
-                            <p id="bio">Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa, architecto accusamus. Amet, perferendis reprehenderit commodi eligendi natus atque mollitia. Illo!</p>
-                            <a href="https://open.spotify.com/playlist/37i9dQZF1DZ06evO4aKvZe"> <h1>Take A Listen!</h1> </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="divsix cell">
-                <div class="tooltip tooltip-1"> 
-                    <h1 id="title" class="title">1</h1>
-                    <div class="tooltip-content" id="tooltip-content">
-                        <div class="content">
-                            <img src="https://www.billboard.com/wp-content/uploads/media/childish-gambino-press-2013-650.jpg?w=650" alt="childish">
-                            <p id="bio">Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa, architecto accusamus. Amet, perferendis reprehenderit commodi eligendi natus atque mollitia. Illo!</p>
-                            <a href="https://open.spotify.com/playlist/37i9dQZF1DZ06evO4aKvZe"> <h1>Take A Listen!</h1> </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="divone cell">
-                <div class="tooltip tooltip-1"> 
-                    <h1 id="title" class="title">1</h1>
-                    <div class="tooltip-content" id="tooltip-content">
-                        <div class="content">
-                            <img src="https://www.billboard.com/wp-content/uploads/media/childish-gambino-press-2013-650.jpg?w=650" alt="childish">
-                            <p id="bio">Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa, architecto accusamus. Amet, perferendis reprehenderit commodi eligendi natus atque mollitia. Illo!</p>
-                            <a href="https://open.spotify.com/playlist/37i9dQZF1DZ06evO4aKvZe"> <h1>Take A Listen!</h1> </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="divtwo cell">
-                <div class="tooltip tooltip-1"> 
-                    <h1 id="title" class="title">1</h1>
-                    <div class="tooltip-content" id="tooltip-content">
-                        <div class="content">
-                            <img src="https://www.billboard.com/wp-content/uploads/media/childish-gambino-press-2013-650.jpg?w=650" alt="childish">
-                            <p id="bio">Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa, architecto accusamus. Amet, perferendis reprehenderit commodi eligendi natus atque mollitia. Illo!</p>
-                            <a href="https://open.spotify.com/playlist/37i9dQZF1DZ06evO4aKvZe"> <h1>Take A Listen!</h1> </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="divthree cell"><div class="tooltip tooltip-1"> 
-                <h1 id="title" class="title">1</h1>
-                <div class="tooltip-content" id="tooltip-content">
-                    <div class="content">
-                        <img src="https://www.billboard.com/wp-content/uploads/media/childish-gambino-press-2013-650.jpg?w=650" alt="childish">
-                        <p id="bio">Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa, architecto accusamus. Amet, perferendis reprehenderit commodi eligendi natus atque mollitia. Illo!</p>
-                        <a href="https://open.spotify.com/playlist/37i9dQZF1DZ06evO4aKvZe"> <h1>Take A Listen!</h1> </a>
-                    </div>
-                </div>
-            </div></div>
-            <div class="divfour cell">
-                <div class="tooltip tooltip-1"> 
-                    <h1 id="title" class="title">1</h1>
-                    <div class="tooltip-content" id="tooltip-content">
-                        <div class="content">
-                            <img src="https://www.billboard.com/wp-content/uploads/media/childish-gambino-press-2013-650.jpg?w=650" alt="childish">
-                            <p id="bio">Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa, architecto accusamus. Amet, perferendis reprehenderit commodi eligendi natus atque mollitia. Illo!</p>
-                            <a href="https://open.spotify.com/playlist/37i9dQZF1DZ06evO4aKvZe"> <h1>Take A Listen!</h1> </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="divfive cell">
-                <div class="tooltip tooltip-1"> 
-                    <h1 id="title" class="title">1</h1>
-                    <div class="tooltip-content" id="tooltip-content">
-                        <div class="content">
-                            <img src="https://www.billboard.com/wp-content/uploads/media/childish-gambino-press-2013-650.jpg?w=650" alt="childish">
-                            <p id="bio">Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa, architecto accusamus. Amet, perferendis reprehenderit commodi eligendi natus atque mollitia. Illo!</p>
-                            <a href="https://open.spotify.com/playlist/37i9dQZF1DZ06evO4aKvZe"> <h1>Take A Listen!</h1> </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="divsix cell">
-                <div class="tooltip tooltip-1"> 
-                    <h1 id="title" class="title">1</h1>
-                    <div class="tooltip-content" id="tooltip-content">
-                        <div class="content">
-                            <img src="https://www.billboard.com/wp-content/uploads/media/childish-gambino-press-2013-650.jpg?w=650" alt="childish">
-                            <p id="bio">Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa, architecto accusamus. Amet, perferendis reprehenderit commodi eligendi natus atque mollitia. Illo!</p>
-                            <a href="https://open.spotify.com/playlist/37i9dQZF1DZ06evO4aKvZe"> <h1>Take A Listen!</h1> </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="divone cell">
-                <div class="tooltip tooltip-1"> 
-                    <h1 id="title" class="title">1</h1>
-                    <div class="tooltip-content" id="tooltip-content">
-                        <div class="content">
-                            <img src="https://www.billboard.com/wp-content/uploads/media/childish-gambino-press-2013-650.jpg?w=650" alt="childish">
-                            <p id="bio">Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa, architecto accusamus. Amet, perferendis reprehenderit commodi eligendi natus atque mollitia. Illo!</p>
-                            <a href="https://open.spotify.com/playlist/37i9dQZF1DZ06evO4aKvZe"> <h1>Take A Listen!</h1> </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="divtwo cell">
-                <div class="tooltip tooltip-1"> 
-                    <h1 id="title" class="title">1</h1>
-                    <div class="tooltip-content" id="tooltip-content">
-                        <div class="content">
-                            <img src="https://www.billboard.com/wp-content/uploads/media/childish-gambino-press-2013-650.jpg?w=650" alt="childish">
-                            <p id="bio">Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa, architecto accusamus. Amet, perferendis reprehenderit commodi eligendi natus atque mollitia. Illo!</p>
-                            <a href="https://open.spotify.com/playlist/37i9dQZF1DZ06evO4aKvZe"> <h1>Take A Listen!</h1> </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="divthree cell">
-                <div class="tooltip tooltip-1"> 
-                <h1 id="title" class="title">1</h1>
-                <div class="tooltip-content" id="tooltip-content">
-                    <div class="content">
-                        <img src="https://www.billboard.com/wp-content/uploads/media/childish-gambino-press-2013-650.jpg?w=650" alt="childish">
-                        <p id="bio">Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa, architecto accusamus. Amet, perferendis reprehenderit commodi eligendi natus atque mollitia. Illo!</p>
-                        <a href="https://open.spotify.com/playlist/37i9dQZF1DZ06evO4aKvZe"> <h1>Take A Listen!</h1> </a>
-                    </div>
-                </div>
-            </div></div>
-            <div class="divfour cell">
-                <div class="tooltip tooltip-1"> 
-                <h1 id="title" class="title">1</h1>
-                <div class="tooltip-content" id="tooltip-content">
-                    <div class="content">
-                        <img src="https://www.billboard.com/wp-content/uploads/media/childish-gambino-press-2013-650.jpg?w=650" alt="childish">
-                        <p id="bio">Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa, architecto accusamus. Amet, perferendis reprehenderit commodi eligendi natus atque mollitia. Illo!</p>
-                        <a href="https://open.spotify.com/playlist/37i9dQZF1DZ06evO4aKvZe"> <h1>Take A Listen!</h1> </a>
-                    </div>
-                </div>
-            </div></div>
-            <div class="divfive cell">
-                <div class="tooltip tooltip-1"> 
-                    <h1 id="title" class="title">1</h1>
-                    <div class="tooltip-content" id="tooltip-content">
-                        <div class="content">
-                            <img src="https://www.billboard.com/wp-content/uploads/media/childish-gambino-press-2013-650.jpg?w=650" alt="childish">
-                            <p id="bio">Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa, architecto accusamus. Amet, perferendis reprehenderit commodi eligendi natus atque mollitia. Illo!</p>
-                            <a href="https://open.spotify.com/playlist/37i9dQZF1DZ06evO4aKvZe"> <h1>Take A Listen!</h1> </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="divsix cell">
-                <div class="tooltip tooltip-1"> 
-                    <h1 id="title" class="title">1</h1>
-                    <div class="tooltip-content" id="tooltip-content">
-                        <div class="content">
-                            <img src="https://www.billboard.com/wp-content/uploads/media/childish-gambino-press-2013-650.jpg?w=650" alt="childish">
-                            <p id="bio">Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa, architecto accusamus. Amet, perferendis reprehenderit commodi eligendi natus atque mollitia. Illo!</p>
-                            <a href="https://open.spotify.com/playlist/37i9dQZF1DZ06evO4aKvZe"> <h1>Take A Listen!</h1> </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="divone cell">
-                <div class="tooltip tooltip-1"> 
-                    <h1 id="title" class="title">1</h1>
-                    <div class="tooltip-content" id="tooltip-content">
-                        <div class="content">
-                            <img src="https://www.billboard.com/wp-content/uploads/media/childish-gambino-press-2013-650.jpg?w=650" alt="childish">
-                            <p id="bio">Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa, architecto accusamus. Amet, perferendis reprehenderit commodi eligendi natus atque mollitia. Illo!</p>
-                            <a href="https://open.spotify.com/playlist/37i9dQZF1DZ06evO4aKvZe"> <h1>Take A Listen!</h1> </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="divtwo cell">
-                <div class="tooltip tooltip-1"> 
-                    <h1 id="title" class="title">1</h1>
-                    <div class="tooltip-content" id="tooltip-content">
-                        <div class="content">
-                            <img src="https://www.billboard.com/wp-content/uploads/media/childish-gambino-press-2013-650.jpg?w=650" alt="childish">
-                            <p id="bio">Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa, architecto accusamus. Amet, perferendis reprehenderit commodi eligendi natus atque mollitia. Illo!</p>
-                            <a href="https://open.spotify.com/playlist/37i9dQZF1DZ06evO4aKvZe"> <h1>Take A Listen!</h1> </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="divthree cell">
-                <div class="tooltip tooltip-1"> 
-                    <h1 id="title" class="title">1</h1>
-                    <div class="tooltip-content" id="tooltip-content">
-                        <div class="content">
-                            <img src="https://www.billboard.com/wp-content/uploads/media/childish-gambino-press-2013-650.jpg?w=650" alt="childish">
-                            <p id="bio">Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa, architecto accusamus. Amet, perferendis reprehenderit commodi eligendi natus atque mollitia. Illo!</p>
-                            <a href="https://open.spotify.com/playlist/37i9dQZF1DZ06evO4aKvZe"> <h1>Take A Listen!</h1> </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="divfour cell">
-                <div class="tooltip tooltip-1"> 
-                    <h1 id="title" class="title">1</h1>
-                    <div class="tooltip-content" id="tooltip-content">
-                        <div class="content">
-                            <img src="https://www.billboard.com/wp-content/uploads/media/childish-gambino-press-2013-650.jpg?w=650" alt="childish">
-                            <p id="bio">Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa, architecto accusamus. Amet, perferendis reprehenderit commodi eligendi natus atque mollitia. Illo!</p>
-                            <a href="https://open.spotify.com/playlist/37i9dQZF1DZ06evO4aKvZe"> <h1>Take A Listen!</h1> </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="divfive cell">
-                <div class="tooltip tooltip-1"> 
-                    <h1 id="title" class="title">1</h1>
-                    <div class="tooltip-content" id="tooltip-content">
-                        <div class="content">
-                            <img src="https://www.billboard.com/wp-content/uploads/media/childish-gambino-press-2013-650.jpg?w=650" alt="childish">
-                            <p id="bio">Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa, architecto accusamus. Amet, perferendis reprehenderit commodi eligendi natus atque mollitia. Illo!</p>
-                            <a href="https://open.spotify.com/playlist/37i9dQZF1DZ06evO4aKvZe"> <h1>Take A Listen!</h1> </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="divsix cell">
-                <div class="tooltip tooltip-1"> 
-                    <h1 id="title" class="title">1</h1>
-                    <div class="tooltip-content" id="tooltip-content">
-                        <div class="content">
-                            <img src="https://www.billboard.com/wp-content/uploads/media/childish-gambino-press-2013-650.jpg?w=650" alt="childish">
-                            <p id="bio">Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa, architecto accusamus. Amet, perferendis reprehenderit commodi eligendi natus atque mollitia. Illo!</p>
-                            <a href="https://open.spotify.com/playlist/37i9dQZF1DZ06evO4aKvZe"> <h1>Take A Listen!</h1> </a>
-                        </div>
-                    </div>
-                </div>
-            </div> -->
+              </div>
+           </div>
+         </div>  
+        <div class="buttons">
+           <button   onclick="artistCards(1)"></button>
+           <button   onclick="artistCards(2)"></button>
+           <button></button>
+           <button></button>
+           <button></button>
+           <button></button>
+           <button></button>
+           <button></button>
+           <button></button>
+           <button></button>
+           <button></button>
+           <button></button>
+           <button></button>
+           <button></button>
+           <button></button>
+           <button></button>
+           <button></button>
+           <button></button>
+           <button></button>
+           <button></button>
+           <button></button>
+           <button></button>
+           <button></button>
+           <button></button>
         </div>
-        </div>
+  
+
+    </div>
+    <div class="headphone-right">
         <div class="ear-cushion-right"></div>
         <div class="ears-right"></div>
         <div class="handle-right"></div>
     </div>
-
-</div>
-
+    </div>
     <script src="js/fest.js"></script>
 </body>
 </html>
