@@ -266,6 +266,8 @@ row-gap: 50px;
     transition:  0.5s;
     text-align: center;
     font-size: 20px;
+
+    /* look at onMounted functions  */
     /* overflow: hidden; */
    /* look more into this overflow hidden */
   /* can i make the page border into a computer and the card is the screen */

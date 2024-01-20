@@ -15,6 +15,10 @@ app.get("/artist", (req, res) => {
     res.sendFile(path.join(__dirname, ("public/html/headphones.html")))
 })
 
+app.get("/schedulepage", (req,res) => {
+    res.sendFile(path.join(__dirname, ("public/html/schedule.html")))
+})
+
 app.get("/artists", queries.getArtists)
 
 app.get("/artists/:id", queries.getArtistById)
