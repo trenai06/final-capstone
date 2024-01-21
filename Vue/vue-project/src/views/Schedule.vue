@@ -1,110 +1,22 @@
 <script setup>
-    import { ref, onMounted } from "vue";
-    import Header from "../components/Header.vue";
 
-    const days = ['Thursday', 'Friday', 'Saturday', 'Sunday']
-    const showButtons = ref(false)
-
-    //CONDITIONAL RENDERING!!!!!!!!
-    //Just display the whole scheudle on load. The filter can still be applied and the values that 
-    //don't fit the criteria will just disappear Just one blockdiv. CSS can be a stage set up like 
-    //when people are ordering tickets online and have to choose seating!!!!!!
-    onMounted(() => {
-        getSchedule()
-    })
-
-    function getSchedule(){
-        fetch("http://localhost:3000/schedule")
-        .then((response) => {
-           let info = response.json()
-            return info
-        })
-        .then((info) => {
-            console.log(info)
-        })
-        .catch((error) => {
-            console.log(error)
-        })
-    }
-
-    function byDay(day){
-        
-        fetch(`http://localhost:3000/schedule/${day}`)
-        .then((response) => {
-            let info = response.json()
-            return info
-        })
-
-        .then((info) => {
-            console.log(info)
-            const container = document.getElementById
-           
-            
-        })
-        .catch((error) => {
-            console.log(error)
-        })
-    }
-
-    function byStage(stage){
-        fetch(`http://localhost:3000/${stage}/stage`)
-        .then((response) => {
-            let info = response.json()
-            return info
-        })
-
-        .then((info) => {
-            console.log(info)
-        })
-
-        .catch((error) => {
-            console.log(error)
-        })
-    }
-
-    function getType(type){
-        fetch(`http://localhost:3000/schedule/${type}`)
-        .then((response) => {
-            let info = response.json()
-            return info
-        })
-        .then((info) => {
-            console.log(info)
-        })
-        .catch((error) => {
-            console.log(error)
-        })
-    }
-
-    // I need to just display boxes on click and then create a function to
-    // display the day schedule 
-    
-    function displayDays(){
-    if(!showButtons.value){
-        showButtons.value = true;
-    } else {
-        showButtons.value = false
-    }
-    }
-
-   
-    
+    import Header2 from "../components/Header2.vue";
 
 </script>
 
 <template>
 <div class="main-container">
-    <Header></Header>
+    <Header2></Header2>
     <div class="table">
         <div class="container">
             <h1> Interpolation</h1>
             <table class="Interpolation">
                 <tr> 
-                    <th></th>
-                    <th> Thursday </th>
-                    <th> Friday </th>
-                    <th> Saturday </th>
-                    <th> Sunday </th>
+                    <th class="blank"></th>
+                    <th class="header"> Thursday </th>
+                    <th class="break"> Friday </th>
+                    <th class="header"> Saturday </th>
+                    <th class="break"> Sunday </th>
                 </tr>
 
                 <tr>
@@ -112,168 +24,154 @@
                     <th colspan="4"></th> 
                 </tr>
                 <tr>
-                    <td>12:00 p.m.</td>
-                    <td></td>
-                    <td>DJ Alli</td>
-                    <td></td>
-                    <td> DJ Alli</td>
+                    <td class="break">12:00 p.m.</td>
+                    <td class="blank"></td>
+                    <td class="local">DJ Alli</td>
+                    <td class="blank"></td>
+                    <td class="local"> DJ Alli</td>
                 </tr>
                 <tr>
-                    <td>1:00 p.m.</td>
-                    <td>Trombone Alli Presents</td>
-                    <td></td>
-                    <td>Trombone Alli Presents</td>
-                    <td></td>
+                    <td class="header">1:00 p.m.</td>
+                    <td class="local">Trombone Alli Presents</td>
+                    <td class="blank"></td>
+                    <td class="local">Trombone Alli Presents</td>
+                    <td class="blank"></td>
                 </tr>
                 <tr>
-                    <td>2:00 p.m.</td>
-                    <td></td>
-                    <td>Durand Jones & The Indications</td>
-                    <td></td>
-                    <td>The CooLots</td>
+                    <td class="break">2:00 p.m.</td>
+                    <td class="blank"></td>
+                    <td class="headliner">Durand Jones & The Indications</td>
+                    <td class="blank"></td>
+                    <td class="headliner">The CooLots</td>
                 </tr>
                 <tr>
-                    <td> 3:00 p.m.</td>
-                    <td colspan="4"> Break</td>
+                    <td class="header"> 3:00 p.m.</td>
+                    <td colspan="4" class="break"> Break</td>
                 </tr>
                 <tr>
-                    <td>4:00 p.m.</td>
-                    <td>Dizzy Dreamer</td>
-                    <td></td>
-                    <td>Va Va Vixens</td>
-                    <td></td>
+                    <td class="break">4:00 p.m.</td>
+                    <td class="local">Dizzy Dreamer</td>
+                    <td class="blank"></td>
+                    <td class="local">Va Va Vixens</td>
+                    <td class="blank"></td>
                 </tr>
                 <tr>
-                    <td>5:00 p.m.</td>
-                    <td></td>
-                    <td>The Jesse Lees</td>
-                    <td></td>
-                    <td>The Jesse Lees</td>
+                    <td class="header">5:00 p.m.</td>
+                    <td class="blank"></td>
+                    <td class="local">The Jesse Lees</td>
+                    <td class="blank"></td>
+                    <td class="local">The Jesse Lees</td>
                 </tr>
                 <tr>
-                    <td>6:00 p.m.</td>
-                    <td>Thundercat</td>
-                    <td></td>
-                    <td>Steve Lacy</td>
-                    <td></td>
+                    <td class="break">6:00 p.m.</td>
+                    <td class="headliner">Thundercat</td>
+                    <td class="blank"></td>
+                    <td class="headliner">Steve Lacy</td>
+                    <td class="blank"></td>
                 </tr>
                 <tr>
-                    <td>7:00 p.m.</td>
-                    <td colspan="4">Break</td>
+                    <td class="header">7:00 p.m.</td>
+                    <td colspan="4" class="break">Break</td>
                 </tr>
                 <tr>
-                    <td>8:00 p.m.</td>
-                    <td></td>
-                    <td>Rhythm Science Sound</td>
-                    <td></td>
-                    <td>AfroPosh</td>
+                    <td class="break">8:00 p.m.</td>
+                    <td class="blank"></td>
+                    <td class="local">Rhythm Science Sound</td>
+                    <td class="blank"></td>
+                    <td class="local">AfroPosh</td>
                 </tr>
                 <tr>
-                    <td>9:00 p.m. (2hr)</td>
-                    <td>Childish Gambino</td>
-                    <td></td>
-                    <td>Megan Thee Stallion</td>
-                    <td></td>
+                    <td class="header">9:00 p.m. (2hr)</td>
+                    <td class="headliner">Childish Gambino</td>
+                    <td class="blank"></td>
+                    <td class="headliner">Megan Thee Stallion</td>
+                    <td class="blank"></td>
                 </tr>
 
             </table>
         </div>
-        <div class="container">
+        <div class="container" id="two">
             <h1>Concatenation</h1>
             <table class="Concatenation">
                 <tr>
-                    <th></th>
-                    <th>Thursday</th>
-                    <th> Friday </th>
-                    <th> Saturday </th>
-                    <th> Sunday </th>
+                    <th class="blank"></th>
+                    <th class="header">Thursday</th>
+                    <th class="break"> Friday </th>
+                    <th class="header"> Saturday </th>
+                    <th class="break"> Sunday </th>
                 </tr>
                 <tr>
                     <th></th>
                     <th colspan="4"></th>
                 </tr>
                 <tr>
-                    <td>12:00 p.m.</td>
-                    <td>DJ Bombshell</td>
-                    <td></td>
-                    <td>Rhythm Science Sound</td>
-                    <td></td>
+                    <td class="break">12:00 p.m.</td>
+                    <td class="local">DJ Bombshell</td>
+                    <td class="blank"></td>
+                    <td class="local">Rhythm Science Sound</td>
+                    <td class="blank"></td>
                 </tr>
                 <tr>
-                    <td>1:00 p.m.</td>
-                    <td></td>
-                    <td>The Louisville Living Room</td>
-                    <td></td>
-                    <td>The Louisville Living Room</td>
+                    <td class="header">1:00 p.m.</td>
+                    <td class="blank"></td>
+                    <td class="local">The Louisville Living Room</td>
+                    <td class="blank"></td>
+                    <td class="local">The Louisville Living Room</td>
                 </tr>
                 <tr>
-                    <td>2:00 p.m.</td>
-                    <td>The Seratones</td>
-                    <td></td>
-                    <td>BJ the Chicago Kid</td>
-                    <td></td>
+                    <td class="break">2:00 p.m.</td>
+                    <td class="headliner">The Seratones</td>
+                    <td class="blank"></td>
+                    <td class="headliner">BJ the Chicago Kid</td>
+                    <td class="blank"></td>
                 </tr>
                 <tr>
-                    <td>3:00 p.m.</td>
-                    <td colspan="4"> Break</td>  
+                    <td class="header">3:00 p.m.</td>
+                    <td colspan="4" class="break"> Break</td>  
                 </tr>
                 <tr>
-                    <td>4:00 p.m.</td>
-                    <td></td>
-                    <td>Va Va Vixens</td>
-                    <td></td>
-                    <td>Kiana & the Sun Kings</td>
+                    <td class="break">4:00 p.m.</td>
+                    <td class="blank"></td>
+                    <td class="local">Va Va Vixens</td>
+                    <td class="blank"></td>
+                    <td class="local">Kiana & the Sun Kings</td>
                 </tr>
                 <tr>
-                    <td>5:00 p.m.</td>
-                    <td>Kiana & the Sun Kings</td>
-                    <td></td>
-                    <td>FoxBat</td>
-                    <td></td>
+                    <td class="header">5:00 p.m.</td>
+                    <td class="local">Kiana & the Sun Kings</td>
+                    <td class="blank"></td>
+                    <td class="local">FoxBat</td>
+                    <td class="blank"></td>
                 </tr>
                 <tr>
-                    <td>6:00 p.m.</td>
-                    <td></td>
-                    <td>Leon Bridges</td>
-                    <td></td>
-                    <td>The Internet</td>
+                    <td class="break">6:00 p.m.</td>
+                    <td class="blank"></td>
+                    <td class="headliner">Leon Bridges</td>
+                    <td class="blank"></td>
+                    <td class="headliner">The Internet</td>
                 </tr>
                 <tr>
-                    <td>7:00 p.m.</td>
-                    <td colspan="4">Break</td>
+                    <td class="header">7:00 p.m.</td>
+                    <td colspan="4" class="break">Break</td>
                 </tr>
                 <tr>
-                    <td>8:00 p.m.</td>
-                    <td>AfroPosh</td>
-                    <td></td>
-                    <td>DJ Syimone</td>
-                    <td></td>
+                    <td class="break">8:00 p.m.</td>
+                    <td class="local">AfroPosh</td>
+                    <td class="blank"></td>
+                    <td class="local">DJ Syimone</td>
+                    <td class="blank"></td>
                 </tr>
                 <tr>
-                    <td>9:00 p.m. (2hr)</td>
-                    <td></td>
-                    <td>H.E.R</td>
-                    <td></td>
-                    <td>Durand Bernarr</td>
+                    <td class="header">9:00 p.m. (2hr)</td>
+                    <td class="blank"></td>
+                    <td class="headliner">H.E.R</td>
+                    <td class="blank"></td>
+                    <td class="headliner">Durand Bernarr</td>
                 </tr>
             </table>
         </div>
     </div>         
-    <div class="filter">
-       <div class="top">
-            <div class="day" @click="displayDays()"> <p>Day</p> 
-                <div v-if="showButtons">
-                    <button v-for="day in days" @click="byDay(day)">{{ day }}</button>
-                </div>
-            </div>
-            <div class="stage"><p> Stage</p></div>
-
-       </div>
-       <div class="bottom">
-            <div class="head"> <p>Headliners</p></div>
-            <div class="local"><p>Locals</p></div>
-       </div>
-    </div>
+    
 </div>
 </template>
 
@@ -282,89 +180,62 @@
 .main-container{
     display:flex;
     flex-direction: column;
-    height:100vh;
-    row-gap: 30px;
+    height:100vh;  
+    background-color: black;
 }
 
 .table{
     display: flex;
     justify-content: space-evenly;
-    height:500px;
+    align-items: center;
+    height:900px;
+    background-color: rgb(50, 50, 139);
 }
 
 .container{
-    border:solid 2px black;
+    color:white;
     display:flex;
     flex-direction: column;
     align-items: center;
-    height:490px;
+    height:775px;
     width:850px;
+    background-color:rgba(76, 0, 130, 0.485);
 }
-.Interpolation{
-    border:solid 2px black;
+.Interpolation, .Concatenation{
     width:800px;
-    height:400px;
+    height:650px;
+    text-align:center;
 }
 
-.Concatenation{
-    border:solid 2px black;
-    width:800px;
-    height:400px;
+td{
+    font-size: 20px;
 }
 
-.filter{
-    height: 200px;
-    display:flex;
-    flex-direction: column;
-    row-gap: 10px;
+th{
+    font-size: 30px;
 }
 
-.top{
-    display:flex;
-    justify-content: center;
-    column-gap: 10px;
-    height:100px;
+h1{
+    font-size:40px;
 }
 
-.day{
-    border:solid 2px;
-    display:flex;
-    flex-direction: column;
-    width:200px;
-    row-gap: 10px;
-    justify-content: center;
-    align-items: center;
+.headliner{
+    background-color:#7270DD;
 }
-
-.stage{
-    display: flex;
-    border:solid 2px;
-    width:200px;
-    justify-content: center;
-    align-items: center;
-}
-.bottom{
-    display:flex;
-    justify-content: center;
-    height: 100px;
-    column-gap: 10px;
-}
-
-.head{
-    display:flex;
-    border: solid 2px;
-    width:200px;
-    justify-content: center;
-    align-items: center;
-}
-
 .local{
-    display:flex;
-    border:solid 2px; 
-   width:200px;
-    justify-content: center;
-    align-items: center;
+    background-color: #50bfdbe3;
+}
+.break{
+    background-color: #6F9CDC;
+    color:black;
 }
 
+.header{
+    background-color: #3173D7;
+    color:black;
+}
 
+.blank{
+    background-color: #A6E4DD;
+}
 </style>

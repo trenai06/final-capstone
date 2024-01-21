@@ -1,51 +1,53 @@
 <script setup>
 import { RouterLink } from "vue-router";
+
 </script>
 
 <template>
-  <div class="navbar">
-    <div class="menu left">
-      <div class="left-dropdown">
-        <div><RouterLink to="/">Home</RouterLink></div>
-        <div><RouterLink to="/general">General Info</RouterLink></div>
-        <div><RouterLink to="/artist">Artists</RouterLink></div>
-        <div><RouterLink to="/schedule">Schedule</RouterLink></div>
-        <div><RouterLink to="/sponsors">Sponsors</RouterLink></div>
-      </div>
-    </div>
-    <div class="knob-outer">
-      <div class="knob">
-        <div class="knob-center">
-          <h3 class="knob-label">/</h3>
+<div class="navbar">
+        <div class="menu left">
+            <div class="left-dropdown">
+                <div><RouterLink to="/">Home</RouterLink></div>
+                <div><RouterLink to="/general">General Info</RouterLink></div>
+               <div><RouterLink to="/artist">Artists</RouterLink></div>
+                <div><RouterLink to="/schedule">Schedule</RouterLink></div>
+                <!-- <div>Theme</div> if time to do something creative -->
+                <div><RouterLink to="/sponsors">Sponsors</RouterLink></div>
+
+            </div>
+        </div>
+        <div class="knob-outer">
+        <div class="knob">
+            <div class="knob-center">
+                <h3 class="knob-label">/</h3>
+            </div>
         </div>
       </div>
-    </div>
-    <div class="screen">
-      <marquee direction="up" class="screen-border" scrollamount="5">
-        <h1>SoWork Music Festival</h1>
-        <h1>January 25 - 26, 2024</h1></marquee>
-    </div>
-    <div class="knob-outer">
-      <div class="knob">
-        <div class="knob-center">
-          <h3 class="knob-label">/</h3>
+        <div class="screen">
+            <div class="screen-border"> <h1> SoWork Music Festival </h1></div>
+        </div> 
+        <div class="knob-outer">
+        <div class="knob">
+            <div class="knob-center">
+                <h3 class="knob-label">/</h3>
+            </div>
         </div>
       </div>
+        <div class="menu right"></div>
+
     </div>
-    <div class="menu right"></div>
-  </div>
 </template>
 
 <style scoped>
-@import url("https://fonts.googleapis.com/css2?family=Pixelify+Sans&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Pixelify+Sans&display=swap');
+
 
 .navbar {
-  border: solid 2px darkgray;
   height: 200px;
   display: flex;
   justify-content: center;
-  justify-content: space-evenly;
-  width:100vw;
+justify-content: space-evenly;
+background-color:rgb(50, 50, 139);
 }
 
 .menu {
@@ -55,7 +57,7 @@ import { RouterLink } from "vue-router";
   border-radius: 30px;
   margin-top: 10px;
   animation-name: light;
-  animation-duration: 2s;
+  animation-duration: 1s;
 }
 
 .left {
@@ -90,13 +92,11 @@ import { RouterLink } from "vue-router";
   display: block;
 }
 
-.left,
-.right {
+.left, .right {
   background-color: rgb(131, 14, 76);
 }
 
-.left:hover,
-.right:hover {
+.left:hover, .right:hover {
   background-color: rgb(241, 24, 183);
 }
 
@@ -109,11 +109,11 @@ import { RouterLink } from "vue-router";
   }
 }
 
-.knob-outer {
+.knob-outer{
   background-color: black;
   border-radius: 50px;
-  height: 90px;
-  width: 90px;
+  height:90px;
+  width:90px;
   display: flex;
   margin-top: 80px;
   justify-content: center;
@@ -146,7 +146,6 @@ import { RouterLink } from "vue-router";
   bottom: 31px;
 }
 
-/* Check the color. black border and gray/white screen. gray border with black screen. ?????*/
 .screen {
   border: solid 2px gray;
   width: 1000px;
@@ -167,11 +166,10 @@ import { RouterLink } from "vue-router";
   display: flex;
   justify-content: center;
   align-items: center;
-  font-family: "Pixelify Sans", sans-serif;
-  color: rgb(172, 255, 47);
-  background-color: gray;
+  font-family: 'Pixelify Sans', sans-serif;
+  color: white;
+  background-color: rgba(125, 60, 171, 0.485);
   font-size: 35px;
-  -webkit-text-stroke-color: black;
-  -webkit-text-stroke-width: 1px;
 }
+
 </style>
