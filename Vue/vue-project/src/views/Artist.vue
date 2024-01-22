@@ -110,6 +110,7 @@ artistsCard()
   top: 20px;
   font-size: 30px;
 }
+/* https://qrco.de/bejK25 */
 
 .container .card .face.face1 .content img {
   position: relative;

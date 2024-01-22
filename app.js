@@ -34,6 +34,8 @@ app.get("/:stage/stage", queries.getScheduleByStage)
 app.get("/schedules/:type", queries.getScheduleByType)
 
 
+
+
 app.listen(3000)
 
 console.log("Express is running!")

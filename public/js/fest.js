@@ -54,3 +54,13 @@ function no() {
     "https://static.vecteezy.com/system/resources/previews/001/826/199/original/progress-loading-bar-buffering-download-upload-and-loading-icon-vector.jpg";
   document.getElementById("paragraph").innerHTML = "";
 }
+
+
+function qrCode(){
+  fetch("	https://api.qr-code-generator.com/v1/create?access-token=asUuN2YZIA42MrvPAFfjdQqErcD_0FQVGt0veF05YpvR0qZgGh5VPuC9mbFKUc0L")
+  .then((response) => {
+    info = response.json()
+    console.log(info)
+    return info
+  })
+}
