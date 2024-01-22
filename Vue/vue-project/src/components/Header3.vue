@@ -21,9 +21,9 @@ import { RouterLink } from "vue-router";
       </div>
     </div>
     <div class="screen">
-      <marquee direction="up" class="screen-border" scrollamount="5">
+      <div direction="up" class="screen-border" scrollamount="5">
         <h1>SoWork Music Festival</h1>
-        <h1>January 25 - 26, 2024</h1></marquee>
+    </div>
     </div>
     <div class="knob-outer">
       <div class="knob">
@@ -40,12 +40,13 @@ import { RouterLink } from "vue-router";
 @import url("https://fonts.googleapis.com/css2?family=Pixelify+Sans&display=swap");
 
 .navbar {
-  border: solid 2px darkgray;
+  border: solid 2px black;
   height: 200px;
   display: flex;
   justify-content: center;
   justify-content: space-evenly;
   width:100vw;
+  background-color: #074a6b;
 }
 
 .menu {
@@ -146,7 +147,6 @@ import { RouterLink } from "vue-router";
   bottom: 31px;
 }
 
-/* Check the color. black border and gray/white screen. gray border with black screen. ?????*/
 .screen {
   border: solid 2px gray;
   width: 1000px;
@@ -168,9 +168,9 @@ import { RouterLink } from "vue-router";
   justify-content: center;
   align-items: center;
   font-family: "Pixelify Sans", sans-serif;
-  color: rgb(172, 255, 47);
+  color:#012638;
   background-color: gray;
-  font-size: 35px;
+  font-size: 40px;
   -webkit-text-stroke-color: black;
   -webkit-text-stroke-width: 1px;
 }

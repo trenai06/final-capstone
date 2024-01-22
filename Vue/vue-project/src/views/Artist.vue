@@ -1,128 +1,58 @@
 <script setup>
-import Header from "../components/Header.vue";
+import Header3 from "../components/Header3.vue";
+import  { ref } from "vue"
 
-function artistCards(id) {
-  fetch(`http://localhost:3000/artists/${id}`)
-    .then((response) => {
-      let info = response.json();
-      return info;
-    })
+let artists = ref([])
 
-    .then((info) => {
-      console.log(info);
+function artistsCard(){
+  fetch('http://localhost:3000/artists')
+  .then((response) => {
+    let info = response.json()
+    return info
+  })
+  .then((info) => {
+    console.log(info)
+    artists.value.push(...info)
+    console.log(artists)
+  })
 
-      const cardParagraph = document.getElementById("paragraph");
-      const cardLink = document.getElementById("link");
-      const cardImage = document.getElementById("image");
-      const cardArtist = document.getElementById("name");
-      cardParagraph.innerHTML = info.bio;
-      cardLink.href = info.spotify;
-      cardImage.src = info.image;
-      cardArtist.innerHTML = info.artist;
-      cardLink.innerHTML = `Take a Look`;
-    })
-
-    .catch((error) => {
-      console.log(error);
-    });
 }
+artistsCard()
 
-function no() {
-  document.getElementById("name").innerHTML = "";
-  document.getElementById("image").src =
-    "https://static.vecteezy.com/system/resources/previews/001/826/199/original/progress-loading-bar-buffering-download-upload-and-loading-icon-vector.jpg";
-  document.getElementById("paragraph").innerHTML = "";
-}
 </script>
 
 <template>
-  <div class="main-container">
-    <Header></Header>
-    <div class="computer-container">
-      <div class="border-container">
-        <div class="container">
-          <div class="card" id="card" @mouseleave="no()">
+    <Header3></Header3>
+    <div class="main-container">
+        <div class="container" v-for="artist in artists">
+          <div class="card" id="card">
             <div class="face face1">
               <div class="content" id="content">
-                <i class="fab fa-windows"></i>
-                <h3 id="name">Want to see more?</h3>
-                <img id="image" />
+                <h3 id="name"> {{ artist.artist }}</h3>
+                <img id="image" :src=artist.image >
               </div>
             </div>
             <div class="face face2">
               <div class="content" id="content">
-                <p id="paragraph"></p>
-                <a id="link" type="button">Choose an Artist</a>
+                <p id="paragraph"> {{ artist.bio }}</p>
+                <a id="link" :href=artist.spotify>Take a Look!!</a>
               </div>
             </div>
           </div>
-        </div>
-      </div>
+        </div> 
     </div>
-
-    <div class="keyboard-container">
-      <div class="buttons">
-        <button @click="artistCards(1)"></button>
-        <button @click="artistCards(2)"></button>
-        <button @click="artistCards(3)"></button>
-        <button @click="artistCards(4)"></button>
-        <button @click="artistCards(5)"></button>
-        <button @click="artistCards(6)"></button>
-        <button @click="artistCards(7)"></button>
-        <button @click="artistCards(8)"></button>
-        <button @click="artistCards(9)"></button>
-        <button @click="artistCards(10)"></button>
-        <button @click="artistCards(11)"></button>
-        <button @click="artistCards(12)"></button>
-        <button @click="artistCards(13)"></button>
-        <button @click="artistCards(14)"></button>
-        <button @click="artistCards(15)"></button>
-        <button @click="artistCards(16)"></button>
-        <button @click="artistCards(17)"></button>
-        <button @click="artistCards(18)"></button>
-        <button @click="artistCards(19)"></button>
-        <button @click="artistCards(20)"></button>
-        <button @click="artistCards(21)"></button>
-        <button @click="artistCards(22)"></button>
-        <button @click="artistCards(23)"></button>
-        <button @click="artistCards(24)"></button>
-        <button class="enter"></button>
-        <button class="space"></button>
-      </div>
-    </div>
-  </div>
 </template>
 
 <style scoped>
-.main-container {
-  height: 100vh;
-  width:100vw;
+
+.main-container{
   display: flex;
-  flex-direction: column;
-  border: solid 2px;
-  align-items: center;
-  row-gap: 10px;
+  flex-wrap: wrap;
+ justify-content: center;
+  column-gap: 80px;
+  background-color:rgb(163, 4, 163);
+  
 }
-
-.computer-container{
-/* border:solid 2px black; */
-display: flex;
-height:500px;
-width:1000px;
-justify-content: center;
-align-items:center;
-}
-
-.border-container{
-  /* border:solid 2px black; */
-  display:flex;
-  height:410px;
-  width: 950px;
-  align-items: center;
-  justify-content: center;
-  background-color: #333;
-}
-
 .container {
   position: relative;
   display:flex;
@@ -134,8 +64,8 @@ align-items:center;
 }
 
 .container .card .face {
-  width: 925px;
-  height: 200px;
+  width: 700px;
+  height: 400px;
   transition: 0.4s;
 }
 .face1 {
@@ -150,7 +80,7 @@ align-items:center;
   align-content:center;
   align-items: center;
   z-index: 1;
-  transform: translateY(0px);
+  transform: translateY(200px);
 }
 
 .container .card:hover .face.face1 {
@@ -169,30 +99,29 @@ align-items:center;
   position:relative;
   top:40px;
 }
+
 .container .card:hover .face.face1 .content {
   opacity: 1;
-}
-
-.container .card .face.face1 .content i {
-  font-size: 3em;
-  color: white;
-  display: inline-block;
 }
 
 .container .card .face.face1 .content h3 {
   color: white;
   position: relative;
-  top: -40px;
+  top: 20px;
+  font-size: 30px;
 }
+
 .container .card .face.face1 .content img {
   position: relative;
-  top: -40px;
-  height: 200px;
-  width: 400px;
+  top: 20px;
+  height: 450px;
+  width: 550px;
 }
+
 .container .card .face.face1 .content img::before {
   overflow: hidden;
 }
+
 .container .card .face.face1 .content a {
   transition: 0.5s;
 }
@@ -203,7 +132,7 @@ align-items:center;
 
 .container .card .face.face2 {
   position: relative;
-  background: whitesmoke;
+  background: teal;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -222,9 +151,9 @@ a {
   font-size: 20px;
   margin: 0;
   padding: 0;
-  color: #333;
+  color: #012638;
   position: relative;
-  bottom: -30px;
+  bottom: -50px;
 }
 
 .container .card .face.face2 .content a {
@@ -236,38 +165,16 @@ a {
   margin: 15px 0 0;
   display: inline-block;
   position: relative;
-  left: 350px;
-  bottom:-20px;
+  font-size: 30px;
+  text-align: center;
+  width:300px;
+  left: 175px;
+  bottom:-80px;
 }
 
 .container .card .face.face2 .content a:hover {
   background: #333;
   color: whitesmoke;
   box-shadow: inset 0px 0px 10px rgba(0, 0, 0, 0.5);
-}
-
-.keyboard-container{
- border:solid 2px;
- height:250px;
-}
-
-button {
-  height: 50px;
-  width: 75px;
-  border-radius: 10px;
-}
-.buttons {
-  display: flex;
-  flex-wrap: wrap;
-  width: 950px;
-  height: 320px;
-  /* row-gap: 5px; */
-  column-gap: 5px;
-}
-.enter {
-  width: 310px;
-}
-.space {
-  width: 1000px;
 }
 </style>
