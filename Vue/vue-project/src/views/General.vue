@@ -1,40 +1,42 @@
 <script setup>
 import { ref } from "vue";
-import Header from "../components/Header.vue";
+import Header4 from "../components/Header4.vue";
 
 import image from "../assets/My_MP3_Code.jpg";
-// function qrCode(){
-//     const reqBody = {
-//         "frame_name": "bottom-frame",
-//         "qr-code-text": "www.google.com",
-//         "image_format": "SVG"
-//     }
-//   fetch("https://api.qr-code-generator.com/v1/create?access-token=asUuN2YZIA42MrvPAFfjdQqErcD_0FQVGt0veF05YpvR0qZgGh5VPuC9mbFKUc0L", {
-//     headers: {
-//         body: JSON.stringify(reqBody),
-//         method: "POST",
 
-//     }
-//   })
-//   .then((response) => {
-//   let info = response.json()
-//     console.log(info)
-//   return info
-//   })
-// }
+let forms = ref([])
+
+function formSubmission() {
+  let firstname = document.getElementById("firstname").value
+  let lastname = document.getElementById("lastname").value
+  let email = document.getElementById("email").value
+  let phone = document.getElementById("phone").value
+  let city = document.getElementById("city").value
+  let state = document.getElementById("state").value
+  forms.value.push(firstname)
+  forms.value.push(lastname)
+  forms.value.push(email)
+  forms.value.push(phone)
+  forms.value.push(city)
+  forms.value.push(state)
+  console.log(forms)
+}
 
 function qR() {
   let container = document.getElementById("container");
   let imageContainer = document.getElementById("qr");
+  let summaryContainer = document.getElementById("summary")
   container.classList.add("hide");
   imageContainer.classList.remove("hide");
   imageContainer.classList.add("display");
+  summaryContainer.classList.remove("hide");
 }
 </script>
 
 <template>
   <div class="main-container">
-    <Header></Header>
+    <Header4></Header4>
+     
     <div class="container" id="container">
         <div class="name">
             <div class="first">
@@ -68,10 +70,25 @@ function qR() {
                 </div>
             </div>
         
-      <button @click="qR()">Register</button>
+      <button @click="qR(),formSubmission()">Register</button>
+    </div>
+    <div class="summary hide" id="summary">
+      <div class="sum-one">
+        <h1> {{ forms[0] }} {{ forms[1] }}</h1>
+      </div>
+      <div class="sum-two">
+        <h1>{{ forms[2] }}</h1> 
+      </div>
+      <div>
+        <h1>{{ forms[3] }}</h1>
+      </div>
+      <div class="sum-three">
+        <h1>{{ forms[4] }} {{ forms[5] }} </h1> 
+
+      </div>
     </div>
     <div class="hide" id="qr">
-      <h1>Thank you for registering. Scan the code for a little treat!</h1>
+      <h1>Thank you for registering {{ forms[0] }}! Scan the code for a little treat!</h1>
       <img :src="image" />
     </div>
   </div>
@@ -81,18 +98,24 @@ function qR() {
 .main-container {
   display: flex;
   flex-direction: column;
-  row-gap: 50px;
+  row-gap: 20px;
   align-items: center;
-  height: 100vh;
-  background-color: black;
+  font-size: 30px;
+  height:100vh;
+  background-image:linear-gradient(to right, rgb(163, 8, 163) 40%, rgb(0, 153, 255), rgb(23, 214, 211));
+  padding-bottom: 30px;
+}
+.container{
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50px;
+  width: 1200px;
+  height: 500px;
+  background-color:rgb(11, 71, 149);
   color: white;
 }
-
-
-.hide {
-  display: none;
-}
-
 .container input {
   height: 30px;
   border: 1px solid #494eea;
@@ -104,9 +127,9 @@ function qR() {
   font-size: 20px;
 }
 .container button {
-  width: 100%;
+  width: 91%;
   height: 50px;
-  background: #494eea;
+  background: black;
   color: #fff;
   border: 0;
   outline: 0;
@@ -118,14 +141,20 @@ function qR() {
 }
 
 img {
-  height: 500px;
-  width: 500px;
+  height: 400px;
+  width: 400px;
+  border: solid 10px black;
+  border-radius: 100px;
 }
 
+.hide {
+  display: none;
+}
 .display {
   display: flex;
   flex-direction: column;
   align-items: center;
+  font-size: 20px;
 }
 
 .name, .details, .address{
@@ -139,7 +168,17 @@ img {
     column-gap: 20px;
     align-items: center;
 }
-
+.sum-three{
+  display:flex;
+  flex-direction: row;
+}
+.summary{
+  width: 600px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 10px;
+}
 
 
 </style>

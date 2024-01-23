@@ -8,12 +8,9 @@ import { RouterLink } from "vue-router";
         <div class="menu left">
             <div class="left-dropdown">
                 <div><RouterLink to="/">Home</RouterLink></div>
-                <div><RouterLink to="/general">General Info</RouterLink></div>
+                <div><RouterLink to="/general">Registration</RouterLink></div>
                <div><RouterLink to="/artist">Artists</RouterLink></div>
-                <div><RouterLink to="/schedule">Schedule</RouterLink></div>
-                <!-- <div>Theme</div> if time to do something creative -->
                 <div><RouterLink to="/sponsors">Sponsors</RouterLink></div>
-
             </div>
         </div>
         <div class="knob-outer">
@@ -70,7 +67,7 @@ background-color:rgb(50, 50, 139);
 .left-dropdown {
   display: none;
   position: absolute;
-  top: 103px;
+  top: 110px;
   left: 5px;
   flex-direction: column;
   z-index: 1;
@@ -78,14 +75,18 @@ background-color:rgb(50, 50, 139);
 }
 
 .left-dropdown div {
-  display: block;
+  display: flex;
+  flex-direction: column;
   border: solid 2px black;
-  height: 100px;
+  height: 75px;
   width: 200px;
-  background-color: black;
-  color: darkgray;
+  border-radius: 50px;
+  background-color: #7270DD;
+  color: white;
   font-size: 30px;
-  text-align: center;
+  align-items: center;
+  justify-content: center;
+  font-family: "Pixelify Sans", sans-serif;
 }
 
 .left:hover .left-dropdown {

@@ -1,6 +1,24 @@
 <script setup>
-
+    import { ref } from "vue"
     import Header2 from "../components/Header2.vue";
+
+    let schedule = ref([])
+
+    fetch("http://localhost:3000/schedule")
+    .then ((response) => {
+      let info = response.json()
+        console.log(info)
+        return info
+    })
+    .then ((info) => {
+        schedule.value.push(...info)
+        console.log(schedule)
+    })
+
+    .catch ((error) => {
+        console.log(error)
+    })
+    
 
 </script>
 
@@ -26,23 +44,23 @@
                 <tr>
                     <td class="break">12:00 p.m.</td>
                     <td class="blank"></td>
-                    <td class="local">DJ Alli</td>
+                    <td class="local">{{ schedule[16].artist }}</td>
                     <td class="blank"></td>
-                    <td class="local"> DJ Alli</td>
+                    <td class="local"> {{schedule[31].artist}}</td>
                 </tr>
                 <tr>
                     <td class="header">1:00 p.m.</td>
-                    <td class="local">Trombone Alli Presents</td>
+                    <td class="local">{{schedule[9].artist}}</td>
                     <td class="blank"></td>
-                    <td class="local">Trombone Alli Presents</td>
+                    <td class="local">{{ schedule[39].artist}}</td>
                     <td class="blank"></td>
                 </tr>
                 <tr>
                     <td class="break">2:00 p.m.</td>
                     <td class="blank"></td>
-                    <td class="headliner">Durand Jones & The Indications</td>
+                    <td class="headliner">{{ schedule[18].artist }}</td>
                     <td class="blank"></td>
-                    <td class="headliner">The CooLots</td>
+                    <td class="headliner">{{ schedule[33].artist }}</td>
                 </tr>
                 <tr>
                     <td class="header"> 3:00 p.m.</td>
@@ -50,23 +68,23 @@
                 </tr>
                 <tr>
                     <td class="break">4:00 p.m.</td>
-                    <td class="local">Dizzy Dreamer</td>
+                    <td class="local">{{schedule[11].artist}}</td>
                     <td class="blank"></td>
-                    <td class="local">Va Va Vixens</td>
+                    <td class="local">{{ schedule[26].artist }}</td>
                     <td class="blank"></td>
                 </tr>
                 <tr>
                     <td class="header">5:00 p.m.</td>
                     <td class="blank"></td>
-                    <td class="local">The Jesse Lees</td>
+                    <td class="local">{{ schedule[20].artist }}</td>
                     <td class="blank"></td>
-                    <td class="local">The Jesse Lees</td>
+                    <td class="local">{{ schedule[35].artist }}</td>
                 </tr>
                 <tr>
                     <td class="break">6:00 p.m.</td>
-                    <td class="headliner">Thundercat</td>
+                    <td class="headliner">{{ schedule[13].artist }}</td>
                     <td class="blank"></td>
-                    <td class="headliner">Steve Lacy</td>
+                    <td class="headliner">{{ schedule[28].artist }}</td>
                     <td class="blank"></td>
                 </tr>
                 <tr>
@@ -76,15 +94,15 @@
                 <tr>
                     <td class="break">8:00 p.m.</td>
                     <td class="blank"></td>
-                    <td class="local">Rhythm Science Sound</td>
+                    <td class="local">{{ schedule[22].artist }}</td>
                     <td class="blank"></td>
-                    <td class="local">AfroPosh</td>
+                    <td class="local">{{ schedule[37].artist }}</td>
                 </tr>
                 <tr>
                     <td class="header">9:00 p.m. (2hr)</td>
-                    <td class="headliner">Childish Gambino</td>
+                    <td class="headliner">{{ schedule[15].artist }}</td>
                     <td class="blank"></td>
-                    <td class="headliner">Megan Thee Stallion</td>
+                    <td class="headliner">{{ schedule[30].artist }}</td>
                     <td class="blank"></td>
                 </tr>
 
@@ -106,23 +124,23 @@
                 </tr>
                 <tr>
                     <td class="break">12:00 p.m.</td>
-                    <td class="local">DJ Bombshell</td>
+                    <td class="local">{{ schedule[8].artist }}</td>
                     <td class="blank"></td>
-                    <td class="local">Rhythm Science Sound</td>
+                    <td class="local">{{ schedule[24].artist }}</td>
                     <td class="blank"></td>
                 </tr>
                 <tr>
                     <td class="header">1:00 p.m.</td>
                     <td class="blank"></td>
-                    <td class="local">The Louisville Living Room</td>
+                    <td class="local">{{ schedule[17].artist }}</td>
                     <td class="blank"></td>
-                    <td class="local">The Louisville Living Room</td>
+                    <td class="local">{{ schedule[32].artist }}</td>
                 </tr>
                 <tr>
                     <td class="break">2:00 p.m.</td>
-                    <td class="headliner">The Seratones</td>
+                    <td class="headliner">{{ schedule[10].artist }}</td>
                     <td class="blank"></td>
-                    <td class="headliner">BJ the Chicago Kid</td>
+                    <td class="headliner">{{ schedule[25].artist }}</td>
                     <td class="blank"></td>
                 </tr>
                 <tr>
@@ -132,23 +150,23 @@
                 <tr>
                     <td class="break">4:00 p.m.</td>
                     <td class="blank"></td>
-                    <td class="local">Va Va Vixens</td>
+                    <td class="local"> {{ schedule[19].artist }}</td>
                     <td class="blank"></td>
-                    <td class="local">Kiana & the Sun Kings</td>
+                    <td class="local">{{ schedule[34].artist }}</td>
                 </tr>
                 <tr>
                     <td class="header">5:00 p.m.</td>
-                    <td class="local">Kiana & the Sun Kings</td>
+                    <td class="local">{{ schedule[12].artist }}</td>
                     <td class="blank"></td>
-                    <td class="local">FoxBat</td>
+                    <td class="local">{{ schedule[27].artist }}</td>
                     <td class="blank"></td>
                 </tr>
                 <tr>
                     <td class="break">6:00 p.m.</td>
                     <td class="blank"></td>
-                    <td class="headliner">Leon Bridges</td>
+                    <td class="headliner">{{ schedule[21].artist }}</td>
                     <td class="blank"></td>
-                    <td class="headliner">The Internet</td>
+                    <td class="headliner">{{ schedule[36].artist }}</td>
                 </tr>
                 <tr>
                     <td class="header">7:00 p.m.</td>
@@ -156,17 +174,17 @@
                 </tr>
                 <tr>
                     <td class="break">8:00 p.m.</td>
-                    <td class="local">AfroPosh</td>
+                    <td class="local">{{ schedule[14].artist }}</td>
                     <td class="blank"></td>
-                    <td class="local">DJ Syimone</td>
+                    <td class="local">{{ schedule[29].artist }}</td>
                     <td class="blank"></td>
                 </tr>
                 <tr>
                     <td class="header">9:00 p.m. (2hr)</td>
                     <td class="blank"></td>
-                    <td class="headliner">H.E.R</td>
+                    <td class="headliner">{{ schedule[23].artist }}</td>
                     <td class="blank"></td>
-                    <td class="headliner">Durand Bernarr</td>
+                    <td class="headliner">{{ schedule[38].artist }}</td>
                 </tr>
             </table>
         </div>

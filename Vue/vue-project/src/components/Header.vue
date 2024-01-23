@@ -7,7 +7,7 @@ import { RouterLink } from "vue-router";
     <div class="menu left">
       <div class="left-dropdown">
         <div><RouterLink to="/">Home</RouterLink></div>
-        <div><RouterLink to="/general">General Info</RouterLink></div>
+        <div><RouterLink to="/general">Registration</RouterLink></div>
         <div><RouterLink to="/artist">Artists</RouterLink></div>
         <div><RouterLink to="/schedule">Schedule</RouterLink></div>
         <div><RouterLink to="/sponsors">Sponsors</RouterLink></div>
@@ -68,7 +68,7 @@ import { RouterLink } from "vue-router";
 .left-dropdown {
   display: none;
   position: absolute;
-  top: 118px;
+  top: 110px;
   left: 5px;
   flex-direction: column;
   z-index: 3;
@@ -76,14 +76,18 @@ import { RouterLink } from "vue-router";
 }
 
 .left-dropdown div {
-  display: block;
+  display: flex;
+  flex-direction: column;
   border: solid 2px black;
-  height: 100px;
+  height: 75px;
   width: 200px;
-  background-color: black;
-  color: darkgray;
+  border-radius: 50px;
+  background-color: gray;
+  color: black;
   font-size: 30px;
-  text-align: center;
+  align-items: center;
+  justify-content: center;
+  font-family: "Pixelify Sans", sans-serif;
 }
 
 .left:hover .left-dropdown {
@@ -146,7 +150,6 @@ import { RouterLink } from "vue-router";
   bottom: 31px;
 }
 
-/* Check the color. black border and gray/white screen. gray border with black screen. ?????*/
 .screen {
   border: solid 2px gray;
   width: 1000px;

@@ -7,8 +7,7 @@ import { RouterLink } from "vue-router";
     <div class="menu left">
       <div class="left-dropdown">
         <div><RouterLink to="/">Home</RouterLink></div>
-        <div><RouterLink to="/general">General Info</RouterLink></div>
-        <div><RouterLink to="/artist">Artists</RouterLink></div>
+        <div><RouterLink to="/general">Registration</RouterLink></div>
         <div><RouterLink to="/schedule">Schedule</RouterLink></div>
         <div><RouterLink to="/sponsors">Sponsors</RouterLink></div>
       </div>
@@ -47,6 +46,7 @@ import { RouterLink } from "vue-router";
   justify-content: space-evenly;
   width:100vw;
   background-color: #074a6b;
+  
 }
 
 .menu {
@@ -69,22 +69,29 @@ import { RouterLink } from "vue-router";
 .left-dropdown {
   display: none;
   position: absolute;
-  top: 118px;
+  top: 110px;
   left: 5px;
   flex-direction: column;
   z-index: 3;
   cursor: pointer;
+  
 }
 
 .left-dropdown div {
-  display: block;
+  display: flex;
+  flex-direction: column;
   border: solid 2px black;
-  height: 100px;
+  height: 75px;
   width: 200px;
-  background-color: black;
-  color: darkgray;
+  border-radius: 50px;
+  background-color: teal;
+  color:#012638;
   font-size: 30px;
   text-align: center;
+  font-size: 30px;
+  text-align: center;
+  justify-content: center;
+  font-family: "Pixelify Sans", sans-serif;
 }
 
 .left:hover .left-dropdown {

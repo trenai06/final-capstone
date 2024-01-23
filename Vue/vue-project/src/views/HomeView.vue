@@ -400,14 +400,14 @@ button {
   flex-wrap: wrap;
   row-gap: 0;
   color: white;
-  font-size: 25px;
+  font-size: 21px;
 }
 
-.cover p {
+/* .cover p {
   display: none;
 }
 
 .cover:hover p {
   display: contents;
-}
+} */
 </style>
