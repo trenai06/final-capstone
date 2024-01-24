@@ -22,8 +22,15 @@ artistsCard()
 </script>
 
 <template>
-    <Header3></Header3>
+    <div class="top-container">
+      <Header3></Header3>
+      <div class="intro">
+        <p>Take a look at our Lineup for this year!</p>
+        <p> We are featuring some big names, plus some local favs from Louisville, Ky!</p>
+      </div>
+    </div>
     <div class="main-container">
+  
         <div class="container" v-for="artist in artists">
           <div class="card" id="card">
             <div class="face face1">
@@ -35,7 +42,7 @@ artistsCard()
             <div class="face face2">
               <div class="content" id="content">
                 <p id="paragraph"> {{ artist.bio }}</p>
-                <a id="link" :href=artist.spotify>Take a Look!!</a>
+                <a id="link" :href=artist.spotify>Click to see more!</a>
               </div>
             </div>
           </div>
@@ -44,19 +51,31 @@ artistsCard()
 </template>
 
 <style scoped>
-
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
 .main-container{
   display: flex;
   flex-wrap: wrap;
  justify-content: center;
   column-gap: 80px;
   background-color:rgb(163, 4, 163);
-  
+  font-family:'Bebas Neue', sans-serif ;
+}
+
+.intro{
+  border: solid 2px rgb(163, 4, 163);
+  height: 60px;
+  z-index: 0;
+  background-color:rgb(163, 4, 163);
+  text-align: center;
+  font-family:'Bebas Neue', sans-serif ;
+  font-size: 40px;
 }
 .container {
   position: relative;
   display:flex;
+  flex-direction: column;
   flex-wrap: wrap;
+  height:635px;
 }
 
 .container .card {
@@ -65,7 +84,7 @@ artistsCard()
 
 .container .card .face {
   width: 700px;
-  height: 400px;
+  height: 350px;
   transition: 0.4s;
 }
 .face1 {
@@ -80,7 +99,7 @@ artistsCard()
   align-content:center;
   align-items: center;
   z-index: 1;
-  transform: translateY(200px);
+  transform: translateY(150px);
 }
 
 .container .card:hover .face.face1 {
@@ -95,9 +114,7 @@ artistsCard()
   opacity: 0.2;
   transition: 0.5s;
   text-align: center;
-  font-size: 20px;
-  position:relative;
-  top:40px;
+  position:relative; 
 }
 
 .container .card:hover .face.face1 .content {
@@ -107,15 +124,15 @@ artistsCard()
 .container .card .face.face1 .content h3 {
   color: white;
   position: relative;
-  top: 20px;
-  font-size: 30px;
+  top: 50px;
+  font-size: 60px;
+  -webkit-text-stroke-color: black;
+  -webkit-text-stroke-width: 1px;
 }
 
 .container .card .face.face1 .content img {
-  position: relative;
-  top: 20px;
-  height: 450px;
-  width: 550px;
+  height: 350px;
+  width: 450px;
 }
 
 .container .card .face.face1 .content img::before {
@@ -132,7 +149,7 @@ artistsCard()
 
 .container .card .face.face2 {
   position: relative;
-  background: teal;
+  background: rgb(62, 199, 199);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -140,36 +157,32 @@ artistsCard()
   box-sizing: border-box;
   box-shadow: 0 20px 50px rgba(0, 0, 0, 0.8);
   transform: translateY(-200px);
+  text-align: center;
 }
 
 .container .card:hover .face.face2 {
   transform: translateY(0);
+  
 }
 
-.container .card .face.face2 .content p,
-a {
-  font-size: 20px;
-  margin: 0;
-  padding: 0;
-  color: #012638;
+.container .card .face.face2 .content p{
+  font-size: 25px;
   position: relative;
-  bottom: -50px;
+  bottom:-30px;
 }
 
 .container .card .face.face2 .content a {
   text-decoration: none;
   color: black;
-  box-sizing: border-box;
-  outline: 1px dashed #333;
   padding: 5px;
-  margin: 15px 0 0;
-  display: inline-block;
   position: relative;
   font-size: 30px;
-  text-align: center;
-  width:300px;
-  left: 175px;
-  bottom:-80px;
+  bottom:-15px;
+  border:solid 2px black;
+  background-color: black;
+  -webkit-text-stroke: white;
+  -webkit-text-stroke-width: 1px;
+  border-radius: 10px;
 }
 
 .container .card .face.face2 .content a:hover {

@@ -5,6 +5,7 @@ import { RouterLink } from "vue-router";
 <template>
   <div class="navbar">
     <div class="menu left">
+      <p>MENU</p>
       <div class="left-dropdown">
         <div><RouterLink to="/">Home</RouterLink></div>
         <div><RouterLink to="/general">Registration</RouterLink></div>
@@ -21,7 +22,7 @@ import { RouterLink } from "vue-router";
     </div>
     <div class="screen">
       <div direction="up" class="screen-border" scrollamount="5">
-        <h1>SoWork Music Festival</h1>
+        <h1>Artist Lineup</h1>
     </div>
     </div>
     <div class="knob-outer">
@@ -37,26 +38,26 @@ import { RouterLink } from "vue-router";
 
 <style scoped>
 @import url("https://fonts.googleapis.com/css2?family=Pixelify+Sans&display=swap");
-
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
 .navbar {
   border: solid 2px black;
-  height: 200px;
+  height: 100px;
   display: flex;
   justify-content: center;
+  align-items: center;
   justify-content: space-evenly;
   width:100vw;
-  background-color: #074a6b;
-  
+  background-color:rgb(30, 30, 30);
 }
 
 .menu {
   border: solid 10px black;
-  height: 100px;
-  width: 100px;
+  height: 70px;
+  width: 70px;
   border-radius: 30px;
-  margin-top: 10px;
-  animation-name: light;
-  animation-duration: 2s;
+  font-family:'Bebas Neue', sans-serif;
+  font-size: 30px;
+  background-color:gray;
 }
 
 .left {
@@ -64,17 +65,17 @@ import { RouterLink } from "vue-router";
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
+  justify-content: center;
+  align-items: center;
 }
 
 .left-dropdown {
   display: none;
   position: absolute;
-  top: 110px;
-  left: 5px;
+  top: 75px;
   flex-direction: column;
   z-index: 3;
-  cursor: pointer;
-  
+  cursor: pointer; 
 }
 
 .left-dropdown div {
@@ -84,13 +85,11 @@ import { RouterLink } from "vue-router";
   height: 75px;
   width: 200px;
   border-radius: 50px;
-  background-color: teal;
+  background-color: gray;
   color:#012638;
   font-size: 30px;
-  text-align: center;
-  font-size: 30px;
-  text-align: center;
   justify-content: center;
+  align-items: center;
   font-family: "Pixelify Sans", sans-serif;
 }
 
@@ -98,39 +97,19 @@ import { RouterLink } from "vue-router";
   display: block;
 }
 
-.left,
-.right {
-  background-color: rgb(131, 14, 76);
-}
-
-.left:hover,
-.right:hover {
-  background-color: rgb(241, 24, 183);
-}
-
-@keyframes light {
-  from {
-    background-color: rgb(131, 14, 76);
-  }
-  to {
-    background-color: rgb(241, 24, 183);
-  }
-}
-
 .knob-outer {
   background-color: black;
   border-radius: 50px;
-  height: 90px;
-  width: 90px;
+  height: 65px;
+  width: 65px;
   display: flex;
-  margin-top: 80px;
   justify-content: center;
   align-items: center;
 }
 .knob {
   border: solid 2px lightgray;
-  height: 75px;
-  width: 75px;
+  height: 55px;
+  width: 55px;
   border-radius: 50px;
   display: flex;
   justify-content: center;
@@ -140,24 +119,24 @@ import { RouterLink } from "vue-router";
 
 .knob-center {
   border: solid 2px gray;
-  height: 60px;
-  width: 60px;
+  height: 45px;
+  width: 45px;
   border-radius: 50px;
   display: flex;
-  font-size: 40px;
   background-color: lightgray;
 }
 
 .knob-label {
   position: relative;
-  left: 20px;
-  bottom: 31px;
+  left: 15px;
+  bottom: 25px;
+  font-size: 35px;
 }
 
 .screen {
   border: solid 2px gray;
-  width: 1000px;
-  height: 150px;
+  width: 715px;
+  height: 85px;
   border-radius: 50px;
   align-self: center;
   display: flex;
@@ -168,16 +147,16 @@ import { RouterLink } from "vue-router";
 
 .screen-border {
   border: solid 2px black;
-  height: 130px;
-  width: 980px;
+  height: 70px;
+  width: 700px;
   border-radius: 40px;
   display: flex;
   justify-content: center;
   align-items: center;
   font-family: "Pixelify Sans", sans-serif;
-  color:#012638;
+  color:white;
   background-color: gray;
-  font-size: 40px;
+  font-size: 30px;
   -webkit-text-stroke-color: black;
   -webkit-text-stroke-width: 1px;
 }

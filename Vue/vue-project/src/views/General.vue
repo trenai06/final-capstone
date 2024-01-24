@@ -28,8 +28,10 @@ function qR() {
   let summaryContainer = document.getElementById("summary")
   container.classList.add("hide");
   imageContainer.classList.remove("hide");
-  imageContainer.classList.add("display");
+  // imageContainer.classList.add("display");
+  imageContainer.classList.add("summary")
   summaryContainer.classList.remove("hide");
+  summaryContainer.classList.add("summary")
 }
 </script>
 
@@ -72,7 +74,7 @@ function qR() {
         
       <button @click="qR(),formSubmission()">Register</button>
     </div>
-    <div class="summary hide" id="summary">
+    <div class="hide" id="summary" >
       <div class="sum-one">
         <h1> {{ forms[0] }} {{ forms[1] }}</h1>
       </div>
@@ -84,26 +86,28 @@ function qR() {
       </div>
       <div class="sum-three">
         <h1>{{ forms[4] }} {{ forms[5] }} </h1> 
-
       </div>
-    </div>
-    <div class="hide" id="qr">
-      <h1>Thank you for registering {{ forms[0] }}! Scan the code for a little treat!</h1>
+      <div class="hide" id="qr">
+        <h1>Thank you for registering {{ forms[0] }}!</h1>
+        <h1>Scan the code for a little treat!</h1>
       <img :src="image" />
+      </div>
     </div>
   </div>
 </template>
 
 <style scoped>
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
 .main-container {
   display: flex;
   flex-direction: column;
-  row-gap: 20px;
+  row-gap: 50px;
   align-items: center;
   font-size: 30px;
   height:100vh;
   background-image:linear-gradient(to right, rgb(163, 8, 163) 40%, rgb(0, 153, 255), rgb(23, 214, 211));
   padding-bottom: 30px;
+  font-family: 'Bebas Neue', sans-serif;
 }
 .container{
   display:flex;
@@ -111,23 +115,24 @@ function qR() {
   justify-content: center;
   align-items: center;
   border-radius: 50px;
-  width: 1200px;
-  height: 500px;
-  background-color:rgb(11, 71, 149);
-  color: white;
+  width: 1000px;
+  height: 700px;
+  background-color:white;
+  color: black;
+  font-family: 'Bebas Neue', sans-serif;
 }
 .container input {
   height: 30px;
-  border: 1px solid #494eea;
+  border: 5px solid #494eea;
   outline: 0;
   padding: 10px;
   margin: 10px 0 20px;
   border-radius: 5px;
-  width: 500px;
+  width: 300px;
   font-size: 20px;
 }
 .container button {
-  width: 91%;
+  width: 60%;
   height: 50px;
   background: black;
   color: #fff;
@@ -137,24 +142,19 @@ function qR() {
   box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
   cursor: pointer;
   margin: 20px 0;
-  font-weight: 500;
+  font-size: 30px;
+  font-family: 'Bebas Neue', sans-serif;
 }
 
 img {
-  height: 400px;
-  width: 400px;
+  height: 350px;
+  width: 350px;
   border: solid 10px black;
   border-radius: 100px;
 }
 
 .hide {
   display: none;
-}
-.display {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  font-size: 20px;
 }
 
 .name, .details, .address{
@@ -174,10 +174,13 @@ img {
 }
 .summary{
   width: 600px;
+  height: 800px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  font-size: 10px;
+  font-size: 15px;
+  background-color: white;
+  padding: 10px;
 }
 
 

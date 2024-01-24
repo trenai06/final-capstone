@@ -1,6 +1,7 @@
 <template>
      <div class="navbar">
     <div class="menu left">
+      <p>MENU</p>
       <div class="left-dropdown">
         <div><RouterLink to="/">Home</RouterLink></div>
         <div><RouterLink to="/artist">Artists</RouterLink></div>
@@ -9,30 +10,35 @@
       </div>
     </div>
     <div class="screen">
-        <h1>REGISTRATION</h1>
-    </div>
+            <div class="screen-border"> <h1> Registration </h1></div>
+        </div> 
     <div class="menu right"></div>
   </div>
 
 </template>
 
 <style scoped>
+@import url('https://fonts.googleapis.com/css2?family=Pixelify+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+
 .navbar {
-  height: 200px;
+  height: 100px;
   display: flex;
   justify-content: center;
   justify-content: space-evenly;
+  align-items: center;
   width:100vw;
+  background-color:rgb(30, 30, 30);
 }
 
 .menu {
   border: solid 10px black;
-  height: 100px;
-  width: 100px;
+  height: 70px;
+  width: 70px;
   border-radius: 30px;
-  margin-top: 10px;
-  animation-name: light;
-  animation-duration: 2s;
+  font-family:'Bebas Neue', sans-serif;
+  font-size: 30px;
+  background-color: gray;
 }
 
 .left {
@@ -40,15 +46,17 @@
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
+  justify-content: center;
+  align-items: center;
 }
 
 .left-dropdown {
   display: none;
   position: absolute;
-  top: 110px;
+  top: 75px;
   left: 5px;
   flex-direction: column;
-  z-index: 3;
+  z-index: 1;
   cursor: pointer;
 }
 
@@ -59,8 +67,8 @@
   height: 75px;
   width: 200px;
   border-radius: 50px;
-  background-color: black;
-  color: darkgray;
+  background-color: gray;
+  color:#012638;
   font-size: 30px;
   justify-content: center;
   align-items: center;
@@ -71,36 +79,32 @@
   display: block;
 }
 
-.left,
-.right {
-  background-color: rgb(131, 14, 76);
-}
-
-.left:hover,
-.right:hover {
-  background-color: rgb(241, 24, 183);
-}
-
-@keyframes light {
-  from {
-    background-color: rgb(131, 14, 76);
-  }
-  to {
-    background-color: rgb(241, 24, 183);
-  }
-}
-
 .screen {
-  font-size: 50px;
-  width: 1200px;
-  height: 150px;
+  border: solid 2px gray;
+  width: 715px;
+  height: 85px;
   border-radius: 50px;
   align-self: center;
   display: flex;
   justify-content: center;
   align-items: center;
-  -webkit-text-stroke-color: white;
-  -webkit-text-fill-color:transparent;
-  -webkit-text-stroke-width: 2px;
+  background-color: black;
 }
+
+.screen-border {
+  border: solid 2px black;
+  height: 70px;
+  width: 700px;
+  border-radius: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Pixelify Sans', sans-serif;
+  color: white;
+  background-color: gray;
+  font-size: 30px;
+  -webkit-text-stroke-color: black;
+  -webkit-text-stroke-width: 1px;
+}
+
 </style>

@@ -1,5 +1,4 @@
 <script setup>
-import { ref } from "vue";
 import Header from "../components/Header.vue";
 
 function videoPlayer(id) {
@@ -12,11 +11,11 @@ function videoPlayer(id) {
     })
     .then((info) => {
       const videoPlayer = document.getElementById("dials");
-      const diskSpin = document.getElementById("disk");
       videoPlayer.innerHTML = "";
       const video = info.video;
       const Player = document.createElement("iframe");
-      Player.style.width = "750px";
+      Player.style.width = "775px";
+      Player.style.height = "325px";
       Player.style.border = "solid 10px gray";
       videoPlayer.appendChild(Player);
       Player.src = video;
@@ -48,7 +47,10 @@ function videoPlayer(id) {
         </div>
       </div>
       <div class="board">
-        <div class="dials" id="dials"></div>
+        <div class="dials" id="dials"> 
+          <h1>Featured Headliners</h1>
+        <p>Click a button below to hear a sample!</p>
+        </div>
         <div class="artists">
           <div class="board-lights">
             <div>
@@ -133,18 +135,23 @@ function videoPlayer(id) {
 </template>
 
 <style scoped>
+
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
 .main-container {
   display: flex;
   flex-direction: column;
   border: solid 5px black;
-  background-color: rgba(0, 0, 0, 0.75);
+  background-color:rgba(0, 0, 0, 0.904);
   height:100vh;
+  font-family: 'Bebas Neue', sans-serif;
 }
 
 .middle-container {
   display: flex;
   flex-direction: row;
   border: solid 5px black;
+  height:840px;
+  
 }
 
 .deck {
@@ -220,7 +227,7 @@ function videoPlayer(id) {
   width: 60px;
   border-radius: 50%;
   border: solid 2px darkgray;
-  background-color: rgb(84, 83, 83);
+  background-color: rgb(40, 39, 39);
 }
 
 .board {
@@ -232,11 +239,16 @@ function videoPlayer(id) {
 
 .dials {
   border: solid 10px black;
-  height: 190px;
+  height: 300px;
   display: flex;
-  align-content: center;
+  flex-direction: column;
+  align-items: center;
   justify-content: center;
   background-color: gray;
+}
+
+.dials h1{
+  font-size: 50px;
 }
 
 .artists {
@@ -259,7 +271,7 @@ function videoPlayer(id) {
   position: relative;
   display: flex;
   width: 100px;
-  height: 10px;
+  height: 5px;
   border: solid 2px;
   justify-content: center;
 }
@@ -285,10 +297,10 @@ function videoPlayer(id) {
 .slider:before {
   position: absolute;
   content: "";
-  height: 50px;
+  height: 30px;
   width: 12px;
   left: 4px;
-  bottom: -20px;
+  bottom: -10px;
   background-color: lightgray;
   -webkit-transition: 0.4s;
   transition: 0.4s;
@@ -314,6 +326,12 @@ input:checked + .slider:before {
   flex-grow: 2;
 }
 
+button {
+  height: 40px;
+  width: 15px;
+  background-color: greenyellow;
+}
+
 .artist-button {
   display: flex;
   flex-wrap: wrap;
@@ -324,12 +342,6 @@ input:checked + .slider:before {
   padding: 10px;
   height: 400px;
   align-items: center;
-}
-
-button {
-  height: 100px;
-  width: 10px;
-  background-color: greenyellow;
 }
 
 .a {
@@ -402,12 +414,4 @@ button {
   color: white;
   font-size: 21px;
 }
-
-/* .cover p {
-  display: none;
-}
-
-.cover:hover p {
-  display: contents;
-} */
 </style>

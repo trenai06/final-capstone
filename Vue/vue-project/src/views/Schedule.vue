@@ -27,7 +27,7 @@
     <Header2></Header2>
     <div class="table">
         <div class="container">
-            <h1> Interpolation</h1>
+            <h1> Interpolation Stage</h1>
             <table class="Interpolation">
                 <tr> 
                     <th class="blank"></th>
@@ -109,7 +109,7 @@
             </table>
         </div>
         <div class="container" id="two">
-            <h1>Concatenation</h1>
+            <h1>Concatenation Stage</h1>
             <table class="Concatenation">
                 <tr>
                     <th class="blank"></th>
@@ -194,12 +194,13 @@
 </template>
 
 <style scoped>
-
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
 .main-container{
     display:flex;
     flex-direction: column;
     height:100vh;  
-    background-color: black;
+    background-color:rgb(30, 30, 30);
+    font-family: 'Bebas Neue', sans-serif;
 }
 
 .table{
@@ -207,7 +208,7 @@
     justify-content: space-evenly;
     align-items: center;
     height:900px;
-    background-color: rgb(50, 50, 139);
+   
 }
 
 .container{
@@ -215,18 +216,23 @@
     display:flex;
     flex-direction: column;
     align-items: center;
-    height:775px;
+    height:800px;
     width:850px;
-    background-color:rgba(76, 0, 130, 0.485);
+    background-color:black;
+    
+}
+
+.container h1{
+     font-size: 40px;
 }
 .Interpolation, .Concatenation{
-    width:800px;
-    height:650px;
+    width:825px;
+    height:680px;
     text-align:center;
 }
 
 td{
-    font-size: 20px;
+    font-size: 30px;
 }
 
 th{
