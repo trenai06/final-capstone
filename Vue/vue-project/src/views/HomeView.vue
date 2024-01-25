@@ -151,7 +151,6 @@ function videoPlayer(id) {
   flex-direction: row;
   border: solid 5px black;
   height:840px;
-  
 }
 
 .deck {

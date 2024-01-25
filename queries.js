@@ -75,6 +75,15 @@ const getScheduleByType = (req, res) => {
     })
 }
 
+const getSponsors = (req, res) => {
+    pool.query('SELECT * FROM sponsors', (error, results) => {
+        if(error){
+            throw error
+        }
+        res.status(200).json(results.rows)
+    })
+}
+
 
 module.exports = {
     getArtists, 
@@ -83,5 +92,6 @@ module.exports = {
     getSchedule,
     getScheduleByDay,
     getScheduleByStage,
-    getScheduleByType
+    getScheduleByType, 
+    getSponsors, 
 }

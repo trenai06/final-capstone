@@ -33,6 +33,8 @@ app.get("/:stage/stage", queries.getScheduleByStage)
 
 app.get("/schedules/:type", queries.getScheduleByType)
 
+app.get("/sponsors", queries.getSponsors)
+
 
 
 
