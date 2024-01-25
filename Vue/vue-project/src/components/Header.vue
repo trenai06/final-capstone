@@ -24,7 +24,7 @@ import { RouterLink } from "vue-router";
     <div class="screen">
       <marquee direction="up" class="screen-border" scrollamount="5">
         <h1>SoWork Music Festival</h1>
-        <h1>January 25 - 26, 2024</h1></marquee>
+        <h1>January 25 - 28, 2024</h1></marquee>
     </div>
     <div class="knob-outer">
       <div class="knob">
